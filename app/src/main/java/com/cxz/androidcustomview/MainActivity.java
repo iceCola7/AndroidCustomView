@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.cxz.androidcustomview.activity.BankCardActivity;
+import com.cxz.androidcustomview.activity.PayPsdViewActivity;
 import com.cxz.androidcustomview.adapter.MainAdapter;
 import com.cxz.androidcustomview.bean.MainBean;
 import com.cxz.androidcustomview.widget.SuperDividerItemDecoration;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
     private List<MainBean> getDatas() {
         List<MainBean> lists = new ArrayList<>();
         lists.add(new MainBean(0, "银行卡输入框"));
+        lists.add(new MainBean(1, "自定义支付密码输入框"));
         return lists;
     }
 
@@ -48,6 +50,9 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
         switch (bean.getType()) {
             case 0:
                 startActivity(BankCardActivity.class);
+                break;
+            case 1:
+                startActivity(PayPsdViewActivity.class);
                 break;
         }
     }
