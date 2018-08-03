@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/activity_vertical_margin"
+    tools:context=".activity.BankCardActivity">
+
+    <com.cxz.androidcustomview.widget.BankCardEditText
+        android:id="@+id/et_bank_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:hint="输入银行卡号"
+        android:maxLength="23"
+        android:maxLines="1" />
+
+</RelativeLayout>
