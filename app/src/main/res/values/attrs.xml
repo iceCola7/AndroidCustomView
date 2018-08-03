@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PayPsdInputView">
+        <attr name="maxCount" format="integer" />
+        <attr name="circleColor" format="color" />
+        <attr name="bottomLineColor" format="color" />
+        <attr name="radius" format="dimension" />
+        <attr name="divideLineWidth" format="dimension" />
+        <attr name="dividerLineColor" format="color" />
+        <attr name="rectAngle" format="dimension" />
+        <attr name="focusedColor" format="color"/>
+        <attr name="psdType" format="enum">
+            <enum name="rectBox" value="0" />
+            <enum name="bottomLine" value="1" />
+        </attr>
+    </declare-styleable>
+
+</resources>
