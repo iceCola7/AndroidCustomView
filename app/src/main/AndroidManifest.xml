@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.BankCardActivity" />
+        <activity android:name=".activity.PayPsdViewActivity" />
     </application>
 
 </manifest>
