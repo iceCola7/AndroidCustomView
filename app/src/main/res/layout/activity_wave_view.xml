@@ -7,4 +7,16 @@
     android:orientation="vertical"
     tools:context=".activity.WaveViewActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="贝塞尔曲线实现的水波效果" />
+
+    <com.cxz.androidcustomview.widget.WaveBezierView
+        android:id="@+id/wave_bezier_view"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
 </LinearLayout>
