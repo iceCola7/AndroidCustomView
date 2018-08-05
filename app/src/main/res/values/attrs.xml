@@ -8,10 +8,19 @@
         <attr name="divideLineWidth" format="dimension" />
         <attr name="dividerLineColor" format="color" />
         <attr name="rectAngle" format="dimension" />
-        <attr name="focusedColor" format="color"/>
+        <attr name="focusedColor" format="color" />
         <attr name="psdType" format="enum">
             <enum name="rectBox" value="0" />
             <enum name="bottomLine" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="WaveBezierView">
+        <attr name="waveColor" format="color" />
+        <attr name="waveY" format="dimension" />
+        <attr name="waveType" format="enum">
+            <enum name="sin" value="0" />
+            <enum name="cos" value="1" />
         </attr>
     </declare-styleable>
 

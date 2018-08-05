@@ -2,18 +2,23 @@ package com.cxz.androidcustomview.widget;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.os.Build;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 
+import com.cxz.androidcustomview.R;
+
 /**
  * Created by chenxz on 2018/8/4.
+ * 波浪动画-贝塞尔曲线实现
  */
 public class WaveBezierView extends View {
 
@@ -26,9 +31,10 @@ public class WaveBezierView extends View {
     private int mScreenHeight;
     private int mScreenWidth;
     private int mWaveCount;
-    //波浪流动偏移量
+    // 波浪流动偏移量
     private int mOffset;
-    private int mY;
+    // 振幅
+    private int mWaveY;
     private int mWaveColor = Color.LTGRAY;
 
     private int mWaveType = SIN;
@@ -41,17 +47,21 @@ public class WaveBezierView extends View {
 
     public WaveBezierView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.WaveBezierView);
+        mWaveType = typedArray.getInt(R.styleable.WaveBezierView_waveType, SIN);
+        mWaveColor = typedArray.getColor(R.styleable.WaveBezierView_waveColor, mWaveColor);
+        mWaveY = typedArray.getDimensionPixelOffset(R.styleable.WaveBezierView_waveY, dp2px(10));
+        typedArray.recycle();
+
         init();
+
     }
 
     private void init() {
-
-        initPaint();
-
-        mWavePath = new Path();
-
-        mY = dp2px(10);
         mWaveLength = dp2px(500);
+        mWavePath = new Path();
+        initPaint();
     }
 
     private void initPaint() {
@@ -115,20 +125,20 @@ public class WaveBezierView extends View {
         mWavePath.reset();
 
         //Y坐标每次绘制时减去偏移量，即波浪升高
-        mWavePath.moveTo(-mWaveLength + mOffset, mY);
+        mWavePath.moveTo(-mWaveLength + mOffset, mWaveY);
         //每次循环绘制两个二阶贝塞尔曲线形成一个完整波形（含有一个上拱圆，一个下拱圆）
         for (int i = 0; i < mWaveCount; i++) {
             //第一个控制点的坐标为(-mWaveLength * 3 / 4,-mWaveAmplitude)
             mWavePath.quadTo(-mWaveLength * 3 / 4 + mOffset + i * mWaveLength,
-                    -mY,
+                    -mWaveY,
                     -mWaveLength / 2 + mOffset + i * mWaveLength,
-                    mY);
+                    mWaveY);
 
             //第二个控制点的坐标为(-mWaveLength / 4,3 * mWaveAmplitude)
             mWavePath.quadTo(-mWaveLength / 4 + mOffset + i * mWaveLength,
-                    3 * mY,
+                    3 * mWaveY,
                     mOffset + i * mWaveLength,
-                    mY);
+                    mWaveY);
 
             //第二种写法：相对位移
 //            mWavePath.rQuadTo(mWaveLength / 4, -60, mWaveLength / 2, 0);
@@ -149,20 +159,20 @@ public class WaveBezierView extends View {
         mWavePath.reset();
 
         //Y坐标每次绘制时减去偏移量，即波浪升高
-        mWavePath.moveTo(-mWaveLength + mOffset, mY);
+        mWavePath.moveTo(-mWaveLength + mOffset, mWaveY);
         //每次循环绘制两个二阶贝塞尔曲线形成一个完整波形（含有一个上拱圆，一个下拱圆）
         for (int i = 0; i < mWaveCount; i++) {
             //第一个控制点的坐标为(-mWaveLength * 3 / 4,3 * mWaveAmplitude
             mWavePath.quadTo(-mWaveLength * 3 / 4 + mOffset + i * mWaveLength,
-                    3 * mY,
+                    3 * mWaveY,
                     -mWaveLength / 2 + mOffset + i * mWaveLength,
-                    mY);
+                    mWaveY);
 
             //第二个控制点的坐标为(-mWaveLength / 4,-mWaveAmplitude)
             mWavePath.quadTo(-mWaveLength / 4 + mOffset + i * mWaveLength,
-                    -mY,
+                    -mWaveY,
                     mOffset + i * mWaveLength,
-                    mY);
+                    mWaveY);
         }
         mWavePath.lineTo(getWidth(), getHeight());
         mWavePath.lineTo(0, getHeight());
@@ -182,6 +192,20 @@ public class WaveBezierView extends View {
 
     public void startWave() {
         initAnimator();
+    }
+
+    public void resumeWave() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            if (mValueAnimator != null)
+                mValueAnimator.resume();
+        }
+    }
+
+    public void pauseWave() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            if (mValueAnimator != null)
+                mValueAnimator.pause();
+        }
     }
 
     public void stopWave() {
