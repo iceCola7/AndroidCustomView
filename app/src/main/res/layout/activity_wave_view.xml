@@ -25,6 +25,7 @@
         android:id="@+id/wave_bezier_view2"
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:layout_marginTop="@dimen/dp_10"
         app:waveColor="#FF1C2E47"
         app:waveType="cos" />
 

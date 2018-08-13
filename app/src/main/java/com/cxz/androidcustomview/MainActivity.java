@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.cxz.androidcustomview.activity.BankCardActivity;
+import com.cxz.androidcustomview.activity.LoadingActivity;
 import com.cxz.androidcustomview.activity.PayPsdViewActivity;
 import com.cxz.androidcustomview.activity.WaveViewActivity;
 import com.cxz.androidcustomview.adapter.MainAdapter;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
         lists.add(new MainBean(0, "银行卡输入框"));
         lists.add(new MainBean(1, "自定义支付密码输入框"));
         lists.add(new MainBean(2, "波浪动画-贝塞尔曲线实现"));
+        lists.add(new MainBean(3, "LoadingView"));
         return lists;
     }
 
@@ -58,6 +60,9 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
                 break;
             case 2:
                 startActivity(WaveViewActivity.class);
+                break;
+            case 3:
+                startActivity(LoadingActivity.class);
                 break;
         }
     }
