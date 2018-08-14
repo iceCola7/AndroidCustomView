@@ -19,7 +19,8 @@
         <activity android:name=".activity.BankCardActivity" />
         <activity android:name=".activity.PayPsdViewActivity" />
         <activity android:name=".activity.WaveViewActivity" />
-        <activity android:name=".activity.LoadingActivity"></activity>
+        <activity android:name=".activity.LoadingActivity" />
+        <activity android:name=".activity.WaveView2Activity"></activity>
     </application>
 
 </manifest>

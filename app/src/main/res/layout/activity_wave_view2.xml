@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/activity_horizontal_margin"
+    android:orientation="vertical"
+    tools:context=".activity.WaveView2Activity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="正余弦函数实现的水波效果" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.cxz.androidcustomview.widget.WaveSinCosView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:waveAmplitude="10dp"
+            app:waveFillType="top"
+            app:waveSpeed="3"
+            app:waveStart="true"
+            app:waveStartPeriod="1"
+            app:waveType="sin" />
+
+        <com.cxz.androidcustomview.widget.WaveSinCosView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:waveAmplitude="10dp"
+            app:waveFillType="top"
+            app:waveSpeed="3"
+            app:waveStart="true"
+            app:waveStartPeriod="0.5"
+            app:waveType="sin" />
+
+    </FrameLayout>
+
+    <com.cxz.androidcustomview.widget.WaveSinCosView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="80dp"
+        app:waveAmplitude="10dp"
+        app:waveColor="#cccccccc"
+        app:waveFillType="bottom"
+        app:waveSpeed="3"
+        app:waveStart="true"
+        app:waveStartPeriod="1"
+        app:waveType="sin" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp">
+
+        <com.cxz.androidcustomview.widget.WaveSinCosView
+            android:id="@+id/wave_sin"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:waveAmplitude="15dp"
+            app:waveColor="@color/colorAccent"
+            app:waveFillType="bottom"
+            app:waveSpeed="3"
+            app:waveStart="true"
+            app:waveStartPeriod="1"
+            app:waveType="sin" />
+
+        <com.cxz.androidcustomview.widget.WaveSinCosView
+            android:id="@+id/wave_sin2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:waveAmplitude="15dp"
+            app:waveColor="@color/colorAccent"
+            app:waveFillType="bottom"
+            app:waveSpeed="3"
+            app:waveStart="true"
+            app:waveStartPeriod="0"
+            app:waveType="sin" />
+
+    </FrameLayout>
+
+
+</LinearLayout>
