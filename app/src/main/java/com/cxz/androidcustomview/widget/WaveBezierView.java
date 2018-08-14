@@ -49,8 +49,8 @@ public class WaveBezierView extends View {
         super(context, attrs);
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.WaveBezierView);
-        mWaveType = typedArray.getInt(R.styleable.WaveBezierView_waveType, SIN);
-        mWaveColor = typedArray.getColor(R.styleable.WaveBezierView_waveColor, mWaveColor);
+        mWaveType = typedArray.getInt(R.styleable.WaveBezierView_waveTypeB, SIN);
+        mWaveColor = typedArray.getColor(R.styleable.WaveBezierView_waveColorB, mWaveColor);
         mWaveY = typedArray.getDimensionPixelOffset(R.styleable.WaveBezierView_waveY, dp2px(10));
         typedArray.recycle();
 
