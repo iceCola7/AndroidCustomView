@@ -22,7 +22,8 @@
         <activity android:name=".activity.LoadingActivity" />
         <activity android:name=".activity.WaveView2Activity" />
         <activity android:name=".activity.NumberKeyboardActivity" />
-        <activity android:name=".activity.PwdKeyboardActivity"></activity>
+        <activity android:name=".activity.PwdKeyboardActivity" />
+        <activity android:name=".activity.CircleIndicatorActivity"></activity>
     </application>
 
 </manifest>
