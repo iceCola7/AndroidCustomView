@@ -20,7 +20,9 @@
         <activity android:name=".activity.PayPsdViewActivity" />
         <activity android:name=".activity.WaveViewActivity" />
         <activity android:name=".activity.LoadingActivity" />
-        <activity android:name=".activity.WaveView2Activity"></activity>
+        <activity android:name=".activity.WaveView2Activity" />
+        <activity android:name=".activity.NumberKeyboardActivity" />
+        <activity android:name=".activity.PwdKeyboardActivity"></activity>
     </application>
 
 </manifest>
