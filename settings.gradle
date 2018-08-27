@@ -1,1 +1,1 @@
-include ':app', ':numkeyborad'
+include ':app', ':numkeyborad', ':circleindicator'

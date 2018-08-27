@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.cxz.androidcustomview.activity.BankCardActivity;
+import com.cxz.androidcustomview.activity.CircleIndicatorActivity;
 import com.cxz.androidcustomview.activity.LoadingActivity;
 import com.cxz.androidcustomview.activity.NumberKeyboardActivity;
 import com.cxz.androidcustomview.activity.PayPsdViewActivity;
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
         lists.add(new MainBean(4, "LoadingView"));
         lists.add(new MainBean(5, "自定义数字键盘"));
         lists.add(new MainBean(6, "仿微信自定义弹出键盘"));
+        lists.add(new MainBean(7, "CircleIndicator"));
         return lists;
     }
 
@@ -78,6 +80,9 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
                 break;
             case 6:
                 startActivity(PwdKeyboardActivity.class);
+                break;
+            case 7:
+                startActivity(CircleIndicatorActivity.class);
                 break;
         }
     }
