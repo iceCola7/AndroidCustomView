@@ -42,4 +42,8 @@
         </attr>
     </declare-styleable>
 
+    <declare-styleable name="EmptyLayout">
+        <attr name="background_color" format="color"/>
+    </declare-styleable>
+
 </resources>
