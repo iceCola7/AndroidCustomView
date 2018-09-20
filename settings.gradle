@@ -1,1 +1,1 @@
-include ':app', ':numkeyborad', ':circleindicator'
+include ':app', ':numkeyborad', ':circleindicator', ':tilt-textview'
