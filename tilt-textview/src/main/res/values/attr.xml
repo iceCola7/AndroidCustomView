@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TiltTextView">
+        <attr name="tiltBgColor" format="color" />
+        <attr name="tiltTextSize" format="dimension" />
+        <attr name="tiltText" format="string" />
+        <attr name="tiltTextColor" format="color" />
+        <attr name="tiltLength" format="dimension" />
+        <attr name="tiltMode" format="enum">
+            <enum name="left_top" value="0" />
+            <enum name="left_top_triangle" value="1" />
+        </attr>
+    </declare-styleable>
+
+</resources>
