@@ -12,6 +12,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.text.TextPaint;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -166,5 +167,51 @@ public class TiltTextView extends View {
         return xy;
     }
 
+    //================= API =====================
+
+    public TiltTextView setText(String text) {
+        mTiltText = text;
+        postInvalidate();
+        return this;
+    }
+
+    public TiltTextView setText(int resId) {
+        String text = getResources().getString(resId);
+        if (!TextUtils.isEmpty(text)) {
+            setText(text);
+        }
+        return this;
+    }
+
+    public String getText() {
+        return mTiltText;
+    }
+
+    public TiltTextView setTiltBgColor(int color) {
+        mTiltBgColor = color;
+        mPaint.setColor(mTiltBgColor);
+        postInvalidate();
+        return this;
+    }
+
+    public TiltTextView setTextColor(int color) {
+        mTextColor = color;
+        mTextPaint.setColor(mTextColor);
+        postInvalidate();
+        return this;
+    }
+
+    public TiltTextView setTextSize(int size) {
+        mTextSize = size;
+        mTextPaint.setTextSize(mTextSize);
+        postInvalidate();
+        return this;
+    }
+
+    public TiltTextView setTiltLength(int length) {
+        mTiltLength = length;
+        postInvalidate();
+        return this;
+    }
 
 }
