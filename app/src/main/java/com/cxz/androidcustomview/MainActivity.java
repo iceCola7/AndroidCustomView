@@ -14,6 +14,7 @@ import com.cxz.androidcustomview.activity.LoadingActivity;
 import com.cxz.androidcustomview.activity.NumberKeyboardActivity;
 import com.cxz.androidcustomview.activity.PayPsdViewActivity;
 import com.cxz.androidcustomview.activity.PwdKeyboardActivity;
+import com.cxz.androidcustomview.activity.RollTextViewActivity;
 import com.cxz.androidcustomview.activity.TiltTextViewActivity;
 import com.cxz.androidcustomview.activity.WaveView2Activity;
 import com.cxz.androidcustomview.activity.WaveViewActivity;
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
         lists.add(new MainBean(6, "仿微信自定义弹出键盘"));
         lists.add(new MainBean(7, "CircleIndicator"));
         lists.add(new MainBean(8, "倾斜文本"));
+        lists.add(new MainBean(9, "垂直滚动的广告"));
         return lists;
     }
 
@@ -88,6 +90,9 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
                 break;
             case 8:
                 startActivity(TiltTextViewActivity.class);
+                break;
+            case 9:
+                startActivity(RollTextViewActivity.class);
                 break;
         }
     }

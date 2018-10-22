@@ -24,7 +24,8 @@
         <activity android:name=".activity.NumberKeyboardActivity" />
         <activity android:name=".activity.PwdKeyboardActivity" />
         <activity android:name=".activity.CircleIndicatorActivity" />
-        <activity android:name=".activity.TiltTextViewActivity"></activity>
+        <activity android:name=".activity.TiltTextViewActivity" />
+        <activity android:name=".activity.RollTextViewActivity"></activity>
     </application>
 
 </manifest>
