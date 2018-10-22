@@ -19,11 +19,21 @@
         android:layout_height="wrap_content"
         android:text="结束" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e3e3e3" />
+
     <com.cxz.roll.textview.RollTextView
         android:id="@+id/roll_text"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         app:anim_duration="900"
         app:gap="2000" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e3e3e3" />
 
 </LinearLayout>
