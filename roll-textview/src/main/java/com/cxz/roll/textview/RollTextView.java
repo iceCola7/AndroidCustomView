@@ -80,7 +80,6 @@ public class RollTextView extends LinearLayout implements BaseRollAdapter.OnData
             throw new RuntimeException("you have already set an adapter");
         }
         this.mAdapter = adapter;
-        mAdapter.notifyDataChanged();
         mAdapter.setOnDataChangedListener(this);
         setupAdapter();
     }
@@ -150,7 +149,7 @@ public class RollTextView extends LinearLayout implements BaseRollAdapter.OnData
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (isInEditMode()) {
-            mPaint.setColor(Color.WHITE);
+            mPaint.setColor(Color.RED);
             mPaint.setTextSize(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 16, getResources().getDisplayMetrics()));
             mPaint.setStyle(Paint.Style.STROKE);
             canvas.drawText("RollTextView", 20, getHeight() * 2 / 3, mPaint);
@@ -184,7 +183,7 @@ public class RollTextView extends LinearLayout implements BaseRollAdapter.OnData
         setupAdapter();
     }
 
-    class AnimRunnable implements Runnable {
+    private class AnimRunnable implements Runnable {
 
         @Override
         public void run() {

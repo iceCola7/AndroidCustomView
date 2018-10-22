@@ -27,8 +27,9 @@ public abstract class BaseRollAdapter<T> {
         mDatas = new ArrayList<>(Arrays.asList(datas));
     }
 
-    public void setDatas(List<T> datas) {
+    public void setData(List<T> datas) {
         this.mDatas = datas;
+        notifyDataChanged();
     }
 
     void setOnDataChangedListener(OnDataChangedListener listener) {
@@ -44,7 +45,7 @@ public abstract class BaseRollAdapter<T> {
     }
 
     void notifyDataChanged() {
-         mOnDataChangedListener.onChanged();
+        mOnDataChangedListener.onChanged();
     }
 
     /**
