@@ -22,18 +22,19 @@ import android.widget.LinearLayout;
  */
 public class RollTextView extends LinearLayout implements BaseRollAdapter.OnDataChangedListener {
 
+    private static final int DEFAULT_GAP = 4000;
+    private static final int DEFAULT_ANIM_DURATION = 1000;
     private float mRollTVHeight = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, getResources().getDisplayMetrics());
-
-    private int mGap = 4000;
-    private int mAnimDuration = 1000;
+    private int mGap = DEFAULT_GAP;
+    private int mAnimDuration = DEFAULT_ANIM_DURATION;
     private BaseRollAdapter mAdapter;
     private Paint mPaint;
 
     private View mFirstView;
     private View mSecondView;
 
-    private int mPosition;
-    private boolean isStarted;
+    private int mPosition = 0;
+    private boolean isStarted = false;
     private AnimRunnable mRunnable = new AnimRunnable();
 
     public RollTextView(Context context) {
@@ -63,8 +64,8 @@ public class RollTextView extends LinearLayout implements BaseRollAdapter.OnData
         mAnimDuration = array.getInteger(R.styleable.RollTextView_anim_duration, mAnimDuration);
 
         if (mGap <= mAnimDuration) {
-            mGap = 4000;
-            mAnimDuration = 1000;
+            mGap = DEFAULT_GAP;
+            mAnimDuration = DEFAULT_ANIM_DURATION;
         }
         array.recycle();
     }
@@ -128,7 +129,7 @@ public class RollTextView extends LinearLayout implements BaseRollAdapter.OnData
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        if (LayoutParams.WRAP_CONTENT == heightMeasureSpec) {
+        if (LayoutParams.WRAP_CONTENT == getLayoutParams().height) {
             getLayoutParams().height = (int) mRollTVHeight;
         } else {
             mRollTVHeight = getHeight();
@@ -149,11 +150,16 @@ public class RollTextView extends LinearLayout implements BaseRollAdapter.OnData
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (isInEditMode()) {
-            mPaint.setColor(Color.RED);
+            mPaint.setColor(Color.WHITE);
             mPaint.setTextSize(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 16, getResources().getDisplayMetrics()));
             mPaint.setStyle(Paint.Style.STROKE);
             canvas.drawText("RollTextView", 20, getHeight() * 2 / 3, mPaint);
         }
+    }
+
+    @Override
+    public void onChanged() {
+        setupAdapter();
     }
 
     private void performSwitch() {
@@ -176,11 +182,6 @@ public class RollTextView extends LinearLayout implements BaseRollAdapter.OnData
         });
         set.setDuration(mAnimDuration);
         set.start();
-    }
-
-    @Override
-    public void onChanged() {
-        setupAdapter();
     }
 
     private class AnimRunnable implements Runnable {
