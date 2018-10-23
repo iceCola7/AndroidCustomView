@@ -9,9 +9,16 @@ public class RollTextBean {
 
     public String title;
     public String url;
+    public String tag;
 
     public RollTextBean(String title, String url) {
         this.title = title;
         this.url = url;
+    }
+
+    public RollTextBean(String title, String url, String tag) {
+        this.title = title;
+        this.url = url;
+        this.tag = tag;
     }
 }
