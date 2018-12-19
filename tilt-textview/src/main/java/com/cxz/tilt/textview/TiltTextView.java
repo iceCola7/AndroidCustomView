@@ -25,6 +25,12 @@ public class TiltTextView extends View {
 
     private static final int MODE_LEFT_TOP = 0;
     private static final int MODE_LEFT_TOP_TRIANGLE = 1;
+    private static final int MODE_LEFT_BOTTOM = 2;
+    private static final int MODE_LEFT_BOTTOM_TRIANGLE = 3;
+    private static final int MODE_RIGHT_TOP = 4;
+    private static final int MODE_RIGHT_TOP_TRIANGLE = 5;
+    private static final int MODE_RIGHT_BOTTOM = 6;
+    private static final int MODE_RIGHT_BOTTOM_TRIANGLE = 7;
 
     public static final int ROTATE_ANGLE = 45;
 
@@ -102,11 +108,70 @@ public class TiltTextView extends View {
             case MODE_LEFT_TOP_TRIANGLE:
                 path = getModeLeftTopTrianglePath(path, w, h);
                 break;
+            case MODE_LEFT_BOTTOM:
+                path = getModeLeftBottomPath(path, w, h);
+                break;
+            case MODE_LEFT_BOTTOM_TRIANGLE:
+                path = getModeLeftBottomTrianglePath(path, w, h);
+                break;
+            case MODE_RIGHT_TOP:
+                path = getModeRightTopPath(path, w, h);
+                break;
+            case MODE_RIGHT_TOP_TRIANGLE:
+                path = getModeRightTopTrianglePath(path, w, h);
+                break;
+            case MODE_RIGHT_BOTTOM:
+                path = getModeRightBottomPath(path, w, h);
+                break;
+            case MODE_RIGHT_BOTTOM_TRIANGLE:
+                path = getModeRightBottomTrianglePath(path, w, h);
+                break;
         }
 
         path.close();
         canvas.drawPath(path, mPaint);
         canvas.save();
+    }
+
+    private Path getModeRightBottomTrianglePath(Path path, int w, int h) {
+        path.moveTo(0, h);
+        path.lineTo(w, h);
+        path.lineTo(w, 0);
+        return path;
+    }
+
+    private Path getModeRightBottomPath(Path path, int w, int h) {
+        path.moveTo(0, h);
+        path.lineTo(mTiltLength, h);
+        path.lineTo(w, mTiltLength);
+        path.lineTo(w, 0);
+        return path;
+    }
+
+    private Path getModeRightTopTrianglePath(Path path, int w, int h) {
+        path.lineTo(w, 0);
+        path.lineTo(w, h);
+        return path;
+    }
+
+    private Path getModeRightTopPath(Path path, int w, int h) {
+        path.lineTo(w, h);
+        path.lineTo(w, h - mTiltLength);
+        path.lineTo(mTiltLength, 0);
+        return path;
+    }
+
+    private Path getModeLeftBottomTrianglePath(Path path, int w, int h) {
+        path.lineTo(w, h);
+        path.lineTo(0, h);
+        return path;
+    }
+
+    private Path getModeLeftBottomPath(Path path, int w, int h) {
+        path.lineTo(w, h);
+        path.lineTo(w - mTiltLength, h);
+        path.lineTo(0, mTiltLength);
+        return path;
     }
 
     private Path getModeLeftTopPath(Path path, int w, int h) {
