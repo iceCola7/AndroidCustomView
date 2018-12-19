@@ -2,6 +2,7 @@ package com.cxz.androidcustomview.widget;
 
 import android.text.Editable;
 import android.text.InputFilter;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.widget.EditText;
@@ -210,7 +211,7 @@ public class AddSpaceTextWatcher implements TextWatcher {
     public void setSpaceType(SpaceType spaceType) {
         this.spaceType = spaceType;
         if (this.spaceType == SpaceType.ID_CARD_NUMBER_TYPE) {
-            // editText.setInputType(InputType.TYPE_CLASS_TEXT);
+            editText.setInputType(InputType.TYPE_CLASS_TEXT);
         }
     }
 
