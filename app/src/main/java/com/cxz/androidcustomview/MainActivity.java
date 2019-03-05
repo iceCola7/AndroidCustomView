@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.cxz.androidcustomview.activity.BankCardActivity;
+import com.cxz.androidcustomview.activity.BubbleDrawViewActivity;
 import com.cxz.androidcustomview.activity.CircleIndicatorActivity;
 import com.cxz.androidcustomview.activity.LoadingActivity;
 import com.cxz.androidcustomview.activity.NumberKeyboardActivity;
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
         lists.add(new MainBean(7, "CircleIndicator"));
         lists.add(new MainBean(8, "倾斜文本"));
         lists.add(new MainBean(9, "垂直滚动的广告"));
+        lists.add(new MainBean(10, "仿QQ红点拖动效果"));
         return lists;
     }
 
@@ -93,6 +95,9 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
                 break;
             case 9:
                 startActivity(RollTextViewActivity.class);
+                break;
+            case 10:
+                startActivity(BubbleDrawViewActivity.class);
                 break;
         }
     }
