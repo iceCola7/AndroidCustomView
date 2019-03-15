@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
         lists.add(new MainBean(6, "仿微信自定义弹出键盘"));
         lists.add(new MainBean(7, "CircleIndicator"));
         lists.add(new MainBean(8, "倾斜文本"));
-        lists.add(new MainBean(9, "垂直滚动的广告"));
+        lists.add(new MainBean(9, "垂直和水平滚动的广告"));
         return lists;
     }
 
