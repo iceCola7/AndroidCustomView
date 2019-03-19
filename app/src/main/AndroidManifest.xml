@@ -14,6 +14,7 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
         <activity android:name=".activity.BankCardActivity" />
@@ -25,7 +26,8 @@
         <activity android:name=".activity.PwdKeyboardActivity" />
         <activity android:name=".activity.CircleIndicatorActivity" />
         <activity android:name=".activity.TiltTextViewActivity" />
-        <activity android:name=".activity.RollTextViewActivity"></activity>
+        <activity android:name=".activity.RollTextViewActivity" />
+        <activity android:name=".activity.JDPullRefreshActivity" />
     </application>
 
 </manifest>

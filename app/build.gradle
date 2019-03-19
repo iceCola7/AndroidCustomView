@@ -37,4 +37,6 @@ dependencies {
     implementation project(':tilt-textview')
     implementation project(':roll-textview')
     implementation project(':marqueeview')
+    implementation project(':jdpulltorefresh')
+    implementation 'com.zhy:base-rvadapter:3.0.3'
 }

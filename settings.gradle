@@ -1,1 +1,1 @@
-include ':app', ':numkeyborad', ':circleindicator', ':tilt-textview', ':roll-textview', ':marqueeview'
+include ':app', ':numkeyborad', ':circleindicator', ':tilt-textview', ':roll-textview', ':marqueeview', ':jdpulltorefresh'

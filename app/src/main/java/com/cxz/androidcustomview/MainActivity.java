@@ -10,6 +10,7 @@ import android.view.View;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.cxz.androidcustomview.activity.BankCardActivity;
 import com.cxz.androidcustomview.activity.CircleIndicatorActivity;
+import com.cxz.androidcustomview.activity.JDPullRefreshActivity;
 import com.cxz.androidcustomview.activity.LoadingActivity;
 import com.cxz.androidcustomview.activity.NumberKeyboardActivity;
 import com.cxz.androidcustomview.activity.PayPsdViewActivity;
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
         lists.add(new MainBean(7, "CircleIndicator"));
         lists.add(new MainBean(8, "倾斜文本"));
         lists.add(new MainBean(9, "垂直和水平滚动的广告"));
+        lists.add(new MainBean(10, "仿京东下拉刷新"));
         return lists;
     }
 
@@ -93,6 +95,9 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
                 break;
             case 9:
                 startActivity(RollTextViewActivity.class);
+                break;
+            case 10:
+                startActivity(JDPullRefreshActivity.class);
                 break;
         }
     }
