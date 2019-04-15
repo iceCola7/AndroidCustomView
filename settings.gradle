@@ -1,1 +1,1 @@
-include ':app', ':numkeyborad', ':circleindicator', ':tilt-textview', ':roll-textview', ':bubbledragview'
+include ':app', ':numkeyborad', ':circleindicator', ':tilt-textview', ':roll-textview', ':bubbledragview', ':rangeseekbarlib'
