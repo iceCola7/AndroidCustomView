@@ -1,1 +1,1 @@
-include ':app', ':numkeyborad', ':circleindicator', ':tilt-textview', ':roll-textview', ':bubbledragview', ':rangeseekbarlib'
+include ':app', ':numkeyborad', ':circleindicator', ':tilt-textview', ':roll-textview', ':marqueeview', ':jdpulltorefresh', ':bubbledragview', ':rangeseekbarlib'

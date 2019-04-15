@@ -9,12 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.BubbleDrawViewActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
         <activity android:name=".activity.BankCardActivity" />
@@ -27,6 +27,8 @@
         <activity android:name=".activity.CircleIndicatorActivity" />
         <activity android:name=".activity.TiltTextViewActivity" />
         <activity android:name=".activity.RollTextViewActivity" />
+        <activity android:name=".activity.JDPullRefreshActivity" />
+        <activity android:name=".activity.BubbleDrawViewActivity" />
     </application>
 
 </manifest>

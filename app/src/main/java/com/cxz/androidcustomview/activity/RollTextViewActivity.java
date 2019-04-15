@@ -8,6 +8,7 @@ import com.cxz.androidcustomview.R;
 import com.cxz.androidcustomview.adapter.RollTextViewAdapter;
 import com.cxz.androidcustomview.adapter.RollTextViewAdapter2;
 import com.cxz.androidcustomview.bean.RollTextBean;
+import com.cxz.marqueeview.MarqueeView;
 import com.cxz.roll.textview.RollTextView;
 
 import java.util.ArrayList;
@@ -56,6 +57,9 @@ public class RollTextViewActivity extends AppCompatActivity {
             }
         });
 
+
+        MarqueeView mv_view = findViewById(R.id.mv_view);
+        mv_view.setContent("这是一条跑马灯~~");
 
     }
 }

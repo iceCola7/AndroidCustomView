@@ -27,14 +27,17 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
     implementation 'com.android.support:design:28.0.0'
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
-    implementation project(':numkeyborad')
-    implementation project(':circleindicator')
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46'
     // butterknife
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation 'com.github.ybq:Android-SpinKit:1.2.0'
+    implementation project(':numkeyborad')
+    implementation project(':circleindicator')
     implementation project(':tilt-textview')
     implementation project(':roll-textview')
     implementation project(':bubbledragview')
+    implementation project(':marqueeview')
+    implementation project(':jdpulltorefresh')
+    implementation 'com.zhy:base-rvadapter:3.0.3'
 }
