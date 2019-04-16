@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.cxz.androidcustomview.activity.BankCardActivity;
+import com.cxz.androidcustomview.activity.BubbleDrawViewActivity;
 import com.cxz.androidcustomview.activity.CircleIndicatorActivity;
 import com.cxz.androidcustomview.activity.JDPullRefreshActivity;
 import com.cxz.androidcustomview.activity.LoadingActivity;
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
         lists.add(new MainBean(8, "倾斜文本"));
         lists.add(new MainBean(9, "垂直和水平滚动的广告"));
         lists.add(new MainBean(10, "仿京东下拉刷新"));
+        lists.add(new MainBean(11, "仿QQ气泡拖拽效果"));
         return lists;
     }
 
@@ -98,6 +100,9 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
                 break;
             case 10:
                 startActivity(JDPullRefreshActivity.class);
+                break;
+            case 11:
+                startActivity(BubbleDrawViewActivity.class);
                 break;
         }
     }
