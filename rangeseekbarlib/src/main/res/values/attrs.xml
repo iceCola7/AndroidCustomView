@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="RangeSeekBar">
+        <attr name="thumb" format="integer" />
+        <attr name="sectionTextSize" format="dimension" />
+        <attr name="sectionTextColor" format="color" />
+        <attr name="trackActiveColor" format="color" />
+        <attr name="trackInactiveColor" format="color" />
+        <attr name="trackCircleColor" format="color"/>
+    </declare-styleable>
+
+</resources>
