@@ -40,4 +40,5 @@ dependencies {
     implementation project(':marqueeview')
     implementation project(':jdpulltorefresh')
     implementation 'com.zhy:base-rvadapter:3.0.3'
+    implementation project(':rangeseekbarlib')
 }

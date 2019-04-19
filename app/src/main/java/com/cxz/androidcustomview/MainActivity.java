@@ -16,6 +16,7 @@ import com.cxz.androidcustomview.activity.LoadingActivity;
 import com.cxz.androidcustomview.activity.NumberKeyboardActivity;
 import com.cxz.androidcustomview.activity.PayPsdViewActivity;
 import com.cxz.androidcustomview.activity.PwdKeyboardActivity;
+import com.cxz.androidcustomview.activity.RangeSeekBarActivity;
 import com.cxz.androidcustomview.activity.RollTextViewActivity;
 import com.cxz.androidcustomview.activity.TiltTextViewActivity;
 import com.cxz.androidcustomview.activity.WaveView2Activity;
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
         lists.add(new MainBean(9, "垂直和水平滚动的广告"));
         lists.add(new MainBean(10, "仿京东下拉刷新"));
         lists.add(new MainBean(11, "仿QQ气泡拖拽效果"));
+        lists.add(new MainBean(12, "RangeSeekBar"));
         return lists;
     }
 
@@ -103,6 +105,9 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
                 break;
             case 11:
                 startActivity(BubbleDrawViewActivity.class);
+                break;
+            case 12:
+                startActivity(RangeSeekBarActivity.class);
                 break;
         }
     }
