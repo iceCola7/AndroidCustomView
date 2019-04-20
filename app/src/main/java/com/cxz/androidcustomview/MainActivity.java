@@ -50,19 +50,19 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
 
     private List<MainBean> getDatas() {
         List<MainBean> lists = new ArrayList<>();
-        lists.add(new MainBean(0, "银行卡输入框"));
-        lists.add(new MainBean(1, "自定义支付密码输入框"));
-        lists.add(new MainBean(2, "波浪动画-贝塞尔曲线实现"));
-        lists.add(new MainBean(3, "波浪动画-正余弦函数实现"));
-        lists.add(new MainBean(4, "LoadingView"));
-        lists.add(new MainBean(5, "自定义数字键盘"));
-        lists.add(new MainBean(6, "仿微信自定义弹出键盘"));
-        lists.add(new MainBean(7, "CircleIndicator"));
-        lists.add(new MainBean(8, "倾斜文本"));
-        lists.add(new MainBean(9, "垂直和水平滚动的广告"));
-        lists.add(new MainBean(10, "仿京东下拉刷新"));
-        lists.add(new MainBean(11, "仿QQ气泡拖拽效果"));
-        lists.add(new MainBean(12, "RangeSeekBar"));
+        lists.add(new MainBean(CustomType.TYPE_0, "银行卡输入框"));
+        lists.add(new MainBean(CustomType.TYPE_1, "自定义支付密码输入框"));
+        lists.add(new MainBean(CustomType.TYPE_2, "波浪动画-贝塞尔曲线实现"));
+        lists.add(new MainBean(CustomType.TYPE_3, "波浪动画-正余弦函数实现"));
+        lists.add(new MainBean(CustomType.TYPE_4, "LoadingView"));
+        lists.add(new MainBean(CustomType.TYPE_5, "自定义数字键盘"));
+        lists.add(new MainBean(CustomType.TYPE_6, "仿微信自定义弹出键盘"));
+        lists.add(new MainBean(CustomType.TYPE_7, "CircleIndicator"));
+        lists.add(new MainBean(CustomType.TYPE_8, "倾斜文本"));
+        lists.add(new MainBean(CustomType.TYPE_9, "垂直和水平滚动的广告"));
+        lists.add(new MainBean(CustomType.TYPE_10, "仿京东下拉刷新"));
+        lists.add(new MainBean(CustomType.TYPE_11, "仿QQ气泡拖拽效果"));
+        lists.add(new MainBean(CustomType.TYPE_12, "RangeSeekBar"));
         return lists;
     }
 
@@ -70,43 +70,43 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
         MainBean bean = (MainBean) adapter.getData().get(position);
         switch (bean.getType()) {
-            case 0:
+            case CustomType.TYPE_0:
                 startActivity(BankCardActivity.class);
                 break;
-            case 1:
+            case CustomType.TYPE_1:
                 startActivity(PayPsdViewActivity.class);
                 break;
-            case 2:
+            case CustomType.TYPE_2:
                 startActivity(WaveViewActivity.class);
                 break;
-            case 3:
+            case CustomType.TYPE_3:
                 startActivity(WaveView2Activity.class);
                 break;
-            case 4:
+            case CustomType.TYPE_4:
                 startActivity(LoadingActivity.class);
                 break;
-            case 5:
+            case CustomType.TYPE_5:
                 startActivity(NumberKeyboardActivity.class);
                 break;
-            case 6:
+            case CustomType.TYPE_6:
                 startActivity(PwdKeyboardActivity.class);
                 break;
-            case 7:
+            case CustomType.TYPE_7:
                 startActivity(CircleIndicatorActivity.class);
                 break;
-            case 8:
+            case CustomType.TYPE_8:
                 startActivity(TiltTextViewActivity.class);
                 break;
-            case 9:
+            case CustomType.TYPE_9:
                 startActivity(RollTextViewActivity.class);
                 break;
-            case 10:
+            case CustomType.TYPE_10:
                 startActivity(JDPullRefreshActivity.class);
                 break;
-            case 11:
+            case CustomType.TYPE_11:
                 startActivity(BubbleDrawViewActivity.class);
                 break;
-            case 12:
+            case CustomType.TYPE_12:
                 startActivity(RangeSeekBarActivity.class);
                 break;
         }
@@ -114,6 +114,22 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
 
     private void startActivity(Class clazz) {
         startActivity(new Intent(MainActivity.this, clazz));
+    }
+
+    static class CustomType {
+        static final int TYPE_0 = 0;
+        static final int TYPE_1 = 1;
+        static final int TYPE_2 = 2;
+        static final int TYPE_3 = 3;
+        static final int TYPE_4 = 4;
+        static final int TYPE_5 = 5;
+        static final int TYPE_6 = 6;
+        static final int TYPE_7 = 7;
+        static final int TYPE_8 = 8;
+        static final int TYPE_9 = 9;
+        static final int TYPE_10 = 10;
+        static final int TYPE_11 = 11;
+        static final int TYPE_12 = 12;
     }
 
 }
