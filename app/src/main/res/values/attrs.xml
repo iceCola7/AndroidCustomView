@@ -43,7 +43,13 @@
     </declare-styleable>
 
     <declare-styleable name="EmptyLayout">
-        <attr name="background_color" format="color"/>
+        <attr name="background_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="PswInputView">
+        <attr name="border_color" format="color" />
+        <attr name="dot_color" format="color" />
+        <attr name="count" format="integer" />
     </declare-styleable>
 
 </resources>
