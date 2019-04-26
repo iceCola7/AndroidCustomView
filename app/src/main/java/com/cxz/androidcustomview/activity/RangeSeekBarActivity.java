@@ -3,6 +3,7 @@ package com.cxz.androidcustomview.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.cxz.androidcustomview.R;
 import com.cxz.rangeseekbar.RangeSeekBar;
@@ -20,6 +21,7 @@ public class RangeSeekBarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_range_seek_bar);
 
         RangeSeekBar rangeSeekBar = findViewById(R.id.rangeSeekBar);
+        final TextView tvResult = findViewById(R.id.tv_result);
 
         List<Integer> list = new ArrayList<>();
         list.add(0);
@@ -37,6 +39,8 @@ public class RangeSeekBarActivity extends AppCompatActivity {
         rangeSeekBar.setOnRangeSeekBarListener(new RangeSeekBar.OnRangeSeekBarListener() {
             public void onRangeChange(int minValue, int maxValue) {
                 Log.e(TAG, "onRangeChange: " + minValue + "," + maxValue);
+                String range = minValue + "," + maxValue;
+                tvResult.setText(range);
             }
         });
     }

@@ -24,6 +24,7 @@
         android:layout_below="@+id/rangeSeekBar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp" />
 
 </RelativeLayout>
