@@ -11,6 +11,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.cxz.androidcustomview.activity.BankCardActivity;
 import com.cxz.androidcustomview.activity.BubbleDrawViewActivity;
 import com.cxz.androidcustomview.activity.CircleIndicatorActivity;
+import com.cxz.androidcustomview.activity.GiftActivity;
 import com.cxz.androidcustomview.activity.ImagePreviewActivity;
 import com.cxz.androidcustomview.activity.JDPullRefreshActivity;
 import com.cxz.androidcustomview.activity.LoadingActivity;
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
         lists.add(new MainBean(CustomType.TYPE_11, "仿QQ气泡拖拽效果"));
         lists.add(new MainBean(CustomType.TYPE_12, "RangeSeekBar"));
         lists.add(new MainBean(CustomType.TYPE_13, "ZoomImageView"));
+        lists.add(new MainBean(CustomType.TYPE_14, "礼物列表"));
         return lists;
     }
 
@@ -114,6 +116,9 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
             case CustomType.TYPE_13:
                 startActivity(ImagePreviewActivity.class);
                 break;
+            case CustomType.TYPE_14:
+                startActivity(GiftActivity.class);
+                break;
         }
     }
 
@@ -136,6 +141,7 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
         static final int TYPE_11 = 11;
         static final int TYPE_12 = 12;
         static final int TYPE_13 = 13;
+        static final int TYPE_14 = 14;
     }
 
 }
