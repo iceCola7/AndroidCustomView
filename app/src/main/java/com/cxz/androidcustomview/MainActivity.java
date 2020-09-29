@@ -2,12 +2,15 @@ package com.cxz.androidcustomview;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.cxz.androidcustomview.activity.BankCardActivity;
 import com.cxz.androidcustomview.activity.BubbleDrawViewActivity;
 import com.cxz.androidcustomview.activity.CircleIndicatorActivity;
@@ -30,7 +33,7 @@ import com.cxz.androidcustomview.widget.SuperDividerItemDecoration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.OnItemClickListener {
+public class MainActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private MainAdapter mAdapter;
@@ -42,12 +45,17 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
         mRecyclerView = findViewById(R.id.recycler_view);
 
         mAdapter = new MainAdapter(getDatas());
-        mAdapter.setOnItemClickListener(this);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.addItemDecoration(new SuperDividerItemDecoration.Builder(this).setDividerWidth(0).setDividerColor(getResources().getColor(R.color.colorAccent)).build());
         mRecyclerView.setAdapter(mAdapter);
 
+        mAdapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(@NonNull BaseQuickAdapter<?, ?> adapter, @NonNull View view, int position) {
+                itemClick(adapter, view, position);
+            }
+        });
     }
 
     private List<MainBean> getDatas() {
@@ -70,8 +78,7 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
         return lists;
     }
 
-    @Override
-    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+    private void itemClick(BaseQuickAdapter adapter, View view, int position) {
         MainBean bean = (MainBean) adapter.getData().get(position);
         switch (bean.getType()) {
             case CustomType.TYPE_0:

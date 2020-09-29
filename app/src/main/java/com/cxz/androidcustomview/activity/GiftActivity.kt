@@ -1,11 +1,12 @@
 package com.cxz.androidcustomview.activity
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.cxz.androidcustomview.R
 import com.cxz.androidcustomview.adapter.gift.HorizontalScrollAdapter
 import com.cxz.androidcustomview.bean.GiftItemBean
+import kotlinx.android.synthetic.main.activity_gift.*
 
 class GiftActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

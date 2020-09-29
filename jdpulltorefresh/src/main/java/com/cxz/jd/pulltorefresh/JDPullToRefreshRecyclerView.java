@@ -6,8 +6,8 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.ScaleDrawable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -223,7 +223,7 @@ public class JDPullToRefreshRecyclerView extends LinearLayout {
         });
     }
 
-    public void setLayoutManager(android.support.v7.widget.LinearLayoutManager manager) {
+    public void setLayoutManager(LinearLayoutManager manager) {
         mRecyclerView.setLayoutManager(manager);
     }
 

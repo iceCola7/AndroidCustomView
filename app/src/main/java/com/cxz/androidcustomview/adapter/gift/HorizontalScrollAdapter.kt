@@ -1,12 +1,12 @@
 package com.cxz.androidcustomview.adapter.gift
 
 import android.content.Context
-import android.support.v4.view.PagerAdapter
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager.widget.PagerAdapter
 import com.cxz.androidcustomview.bean.GiftItemBean
 
 /**
@@ -46,10 +46,15 @@ class HorizontalScrollAdapter : PagerAdapter {
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val recyclerView = RecyclerView(context!!)
-        val layoutManager = GridLayoutManager(context, 4, GridLayoutManager.VERTICAL, false)
+        val layoutManager = GridLayoutManager(
+            context,
+            4,
+            GridLayoutManager.VERTICAL,
+            false
+        )
         recyclerView.layoutManager = layoutManager
         val itemAdapter = HorizontalScrollItemAdapter()
-        itemAdapter.setNewData(maps!![position])
+        itemAdapter.setList(maps!![position])
         itemAdapter.setOnItemClickListener { adapter, view, position ->
             val item = adapter.data[position] as GiftItemBean
             Log.e("cxz", "instantiateItem: $position,${item.content}")

@@ -2,7 +2,7 @@ package com.cxz.androidcustomview.activity;
 
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.cxz.androidcustomview.R;
 import com.cxz.androidcustomview.widget.ZoomImageView;

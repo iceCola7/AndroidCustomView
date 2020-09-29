@@ -4,16 +4,16 @@ import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.annotation.AnimatorRes;
-import android.support.annotation.DrawableRes;
-import android.support.v4.view.ViewPager;
+import androidx.annotation.AnimatorRes;
+import androidx.annotation.DrawableRes;
+import androidx.viewpager.widget.ViewPager;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Interpolator;
 import android.widget.LinearLayout;
 
-import static android.support.v4.view.ViewPager.OnPageChangeListener;
+import static androidx.viewpager.widget.ViewPager.OnPageChangeListener;
 
 /**
  * @author chenxz
