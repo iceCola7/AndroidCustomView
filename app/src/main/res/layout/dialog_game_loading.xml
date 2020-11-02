@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:background="@drawable/shape_game_loading_bg"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/downloadLL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <com.cxz.androidcustomview.widget.RoundProgressBar
+                android:id="@+id/roundProgressBar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:roundColor="#EEEEEE"
+                app:roundProgressColor="#FF8219"
+                app:roundWidth="3dp"
+                app:style="STROKE"
+                app:textColor="#FF8219"
+                app:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/loadingTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                tools:text="准备中…" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/downloadErrorLL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@mipmap/ic_download_error" />
+
+            <TextView
+                android:id="@+id/retryTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="#AAAAAA"
+                android:textSize="14sp"
+                tools:text="加载失败重新加载" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

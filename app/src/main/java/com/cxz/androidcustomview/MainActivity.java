@@ -23,6 +23,7 @@ import com.cxz.androidcustomview.activity.PayPsdViewActivity;
 import com.cxz.androidcustomview.activity.PwdKeyboardActivity;
 import com.cxz.androidcustomview.activity.RangeSeekBarActivity;
 import com.cxz.androidcustomview.activity.RollTextViewActivity;
+import com.cxz.androidcustomview.activity.RoundProgressBarActivity;
 import com.cxz.androidcustomview.activity.TiltTextViewActivity;
 import com.cxz.androidcustomview.activity.WaveView2Activity;
 import com.cxz.androidcustomview.activity.WaveViewActivity;
@@ -75,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         lists.add(new MainBean(CustomType.TYPE_12, "RangeSeekBar"));
         lists.add(new MainBean(CustomType.TYPE_13, "ZoomImageView"));
         lists.add(new MainBean(CustomType.TYPE_14, "礼物列表"));
+        lists.add(new MainBean(CustomType.TYPE_15, "自定义圆形进度框"));
         return lists;
     }
 
@@ -126,6 +128,9 @@ public class MainActivity extends AppCompatActivity {
             case CustomType.TYPE_14:
                 startActivity(GiftActivity.class);
                 break;
+            case CustomType.TYPE_15:
+                startActivity(RoundProgressBarActivity.class);
+                break;
         }
     }
 
@@ -149,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
         static final int TYPE_12 = 12;
         static final int TYPE_13 = 13;
         static final int TYPE_14 = 14;
+        static final int TYPE_15 = 15;
     }
 
 }
