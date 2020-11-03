@@ -1,7 +1,6 @@
 package com.cxz.androidcustomview.activity
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.cxz.androidcustomview.R
 import com.cxz.androidcustomview.dialog.LinearLoadingDialog
@@ -67,12 +66,12 @@ class RoundProgressBarActivity : AppCompatActivity() {
             withContext(Dispatchers.IO) {
                 Thread.sleep(100)
             }
-            Log.e("cxz", "updateLinearProgress: ${Thread.currentThread().name}")
             if (progressNum == 100) {
                 linearLoadingDialog.dismissDialog()
             } else {
                 progressNum++
                 linearLoadingDialog.setProgress(progressNum)
+                linearLoadingDialog.setSecondaryProgress(progressNum + 20)
                 updateLinearProgress()
             }
         }

@@ -118,6 +118,10 @@ class LinearLoadingDialog : DialogFragment {
         progressTV?.text = "$progress%"
     }
 
+    fun setSecondaryProgress(secondaryProgress: Int) {
+        progressbar?.secondaryProgress = secondaryProgress
+    }
+
     /**
      * 设置加载文字
      * @param text String

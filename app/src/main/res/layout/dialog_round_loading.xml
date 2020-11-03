@@ -11,7 +11,7 @@
     <LinearLayout
         android:layout_width="130dp"
         android:layout_height="130dp"
-        android:background="@drawable/shape_game_loading_bg"
+        android:background="@drawable/shape_loading_bg"
         android:gravity="center"
         android:orientation="vertical">
 
