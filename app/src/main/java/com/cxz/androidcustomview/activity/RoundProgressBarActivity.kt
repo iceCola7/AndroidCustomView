@@ -3,7 +3,7 @@ package com.cxz.androidcustomview.activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.cxz.androidcustomview.R
-import com.cxz.androidcustomview.dialog.GameLoadingDialog
+import com.cxz.androidcustomview.dialog.RoundLoadingDialog
 import kotlinx.android.synthetic.main.activity_round_progress_bar.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -17,8 +17,8 @@ class RoundProgressBarActivity : AppCompatActivity() {
 
     private var progressNum: Int = 0
 
-    private val gameLoadingDialog: GameLoadingDialog by lazy {
-        GameLoadingDialog()
+    private val roundLoadingDialog: RoundLoadingDialog by lazy {
+        RoundLoadingDialog()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +27,7 @@ class RoundProgressBarActivity : AppCompatActivity() {
 
         button.setOnClickListener {
             progressNum = 0
-            gameLoadingDialog.showDialog(supportFragmentManager)
+            roundLoadingDialog.showDialog(supportFragmentManager)
             updateProgress()
         }
 
@@ -39,10 +39,10 @@ class RoundProgressBarActivity : AppCompatActivity() {
                 Thread.sleep(100)
             }
             if (progressNum == 100) {
-                gameLoadingDialog.dismissDialog()
+                roundLoadingDialog.dismissDialog()
             } else {
                 progressNum++
-                gameLoadingDialog.setProgress(progressNum)
+                roundLoadingDialog.setProgress(progressNum)
                 updateProgress()
             }
         }

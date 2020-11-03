@@ -10,27 +10,19 @@ import android.text.style.ClickableSpan
 import android.text.style.ForegroundColorSpan
 import android.util.TypedValue
 import android.view.*
-import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import com.cxz.androidcustomview.R
-import com.cxz.androidcustomview.widget.RoundProgressBar
-import kotlinx.android.synthetic.main.dialog_game_loading.*
+import kotlinx.android.synthetic.main.dialog_round_loading.*
 
 /**
  * @author chenxz
  * @date 2020/10/28
- * @desc 游戏加载进度框
+ * @desc 圆形加载进度框
  */
-class GameLoadingDialog : DialogFragment {
-
-    private var circleProgressBar: RoundProgressBar? = null
-
-    private var loadingTV: TextView? = null
+class RoundLoadingDialog : DialogFragment {
 
     private var loadingText: String = ""
-
-    private var retryTV: TextView? = null
 
     private var isShowError: Boolean = false
 
@@ -57,7 +49,7 @@ class GameLoadingDialog : DialogFragment {
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.dialog_game_loading, container, false)
+        val view = inflater.inflate(R.layout.dialog_round_loading, container, false)
         return view
     }
 
@@ -67,10 +59,6 @@ class GameLoadingDialog : DialogFragment {
     }
 
     private fun initView() {
-        circleProgressBar = view?.findViewById(R.id.roundProgressBar)
-        loadingTV = view?.findViewById(R.id.loadingTV)
-        retryTV = view?.findViewById(R.id.retryTV)
-
         loadingTV?.text = loadingText
 
         if (isShowError) {
@@ -110,7 +98,7 @@ class GameLoadingDialog : DialogFragment {
      * 显示Dialog
      */
     fun showDialog(fragmentManager: FragmentManager) {
-        super.show(fragmentManager, "game_dialog")
+        super.show(fragmentManager, "round_dialog")
     }
 
     /**
@@ -142,7 +130,7 @@ class GameLoadingDialog : DialogFragment {
      * @param progress Int
      */
     fun setProgress(progress: Int) {
-        circleProgressBar?.setProgress(progress)
+        roundProgressBar?.setProgress(progress)
     }
 
     /**
@@ -150,6 +138,7 @@ class GameLoadingDialog : DialogFragment {
      * @param text String
      */
     fun setLoadingText(text: String) {
+        this.loadingText = text
         loadingTV?.text = text
     }
 
