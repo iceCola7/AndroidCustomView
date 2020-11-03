@@ -14,4 +14,27 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!--全局按钮样式-->
+    <style name="BaseButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="ButtonPrimaryStyle" parent="BaseButtonStyle">
+        <item name="android:layout_height">52dp</item>
+        <item name="android:background">@drawable/selector_primary_crude_button_bg</item>
+    </style>
+
+    <style name="ButtonPrimarySmallerStyle" parent="BaseButtonStyle">
+        <item name="android:layout_height">44dp</item>
+        <item name="android:background">@drawable/selector_primary_button_bg</item>
+    </style>
+
+    <style name="TopDialogAnimation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/top_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/top_exit_anim</item>
+    </style>
+
 </resources>

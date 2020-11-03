@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_game_loading_bg"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <ImageView
+        android:id="@+id/closeIV"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="10dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/dialog_icon_closed" />
+
+    <TextView
+        android:id="@+id/loadingTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#333333"
+        android:textSize="16sp"
+        tools:text="正在加载斗地主游戏资源，请稍候" />
+
+    <LinearLayout
+        android:id="@+id/downloadLL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="40dp"
+            android:max="100"
+            android:progressDrawable="@drawable/dialog_progress_bar_bg" />
+
+        <TextView
+            android:id="@+id/progressTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="#999999"
+            android:textSize="10sp"
+            tools:text="50%" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/downloadErrorLL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/retryTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="加载失败，请重试"
+            android:textColor="#AAAAAA"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/retryBtn"
+            style="@style/ButtonPrimaryStyle"
+            android:layout_width="240dp"
+            android:layout_marginTop="20dp"
+            android:text="重新加载"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

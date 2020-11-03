@@ -1,8 +1,10 @@
 package com.cxz.androidcustomview.activity
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.cxz.androidcustomview.R
+import com.cxz.androidcustomview.dialog.LinearLoadingDialog
 import com.cxz.androidcustomview.dialog.RoundLoadingDialog
 import kotlinx.android.synthetic.main.activity_round_progress_bar.*
 import kotlinx.coroutines.Dispatchers
@@ -17,8 +19,14 @@ class RoundProgressBarActivity : AppCompatActivity() {
 
     private var progressNum: Int = 0
 
+    // 圆形加载进度框
     private val roundLoadingDialog: RoundLoadingDialog by lazy {
         RoundLoadingDialog()
+    }
+
+    // 线性加载进度框
+    private val linearLoadingDialog: LinearLoadingDialog by lazy {
+        LinearLoadingDialog()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,13 +36,19 @@ class RoundProgressBarActivity : AppCompatActivity() {
         button.setOnClickListener {
             progressNum = 0
             roundLoadingDialog.showDialog(supportFragmentManager)
-            updateProgress()
+            updateRoundProgress()
+        }
+
+        button2.setOnClickListener {
+            progressNum = 0
+            linearLoadingDialog.showDialog(supportFragmentManager)
+            updateLinearProgress()
         }
 
     }
 
-    private fun updateProgress() {
-        GlobalScope.launch {
+    private fun updateRoundProgress() {
+        GlobalScope.launch(Dispatchers.Main) {
             withContext(Dispatchers.IO) {
                 Thread.sleep(100)
             }
@@ -43,7 +57,23 @@ class RoundProgressBarActivity : AppCompatActivity() {
             } else {
                 progressNum++
                 roundLoadingDialog.setProgress(progressNum)
-                updateProgress()
+                updateRoundProgress()
+            }
+        }
+    }
+
+    private fun updateLinearProgress() {
+        GlobalScope.launch(Dispatchers.Main) {
+            withContext(Dispatchers.IO) {
+                Thread.sleep(100)
+            }
+            Log.e("cxz", "updateLinearProgress: ${Thread.currentThread().name}")
+            if (progressNum == 100) {
+                linearLoadingDialog.dismissDialog()
+            } else {
+                progressNum++
+                linearLoadingDialog.setProgress(progressNum)
+                updateLinearProgress()
             }
         }
     }
