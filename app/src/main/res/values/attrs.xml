@@ -56,10 +56,13 @@
         <attr name="roundColor" format="color" />
         <attr name="roundProgressColor" format="color" />
         <attr name="roundWidth" format="dimension" />
+        <attr name="roundGap" format="dimension" />
         <attr name="textColor" format="color" />
         <attr name="textSize" format="dimension" />
         <attr name="max" format="integer" />
         <attr name="textIsDisplayable" format="boolean" />
+        <attr name="roundClockWise" format="boolean" />
+        <attr name="roundIsPercent" format="boolean" />
         <attr name="style">
             <enum name="STROKE" value="0" />
             <enum name="FILL" value="1" />
