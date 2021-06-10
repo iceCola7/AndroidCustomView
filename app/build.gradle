@@ -61,4 +61,6 @@ dependencies {
     implementation project(':marqueeview')
     implementation project(':jdpulltorefresh')
     implementation project(':rangeseekbarlib')
+    implementation project(':shadowimage')
+    implementation project(':paletteimage')
 }

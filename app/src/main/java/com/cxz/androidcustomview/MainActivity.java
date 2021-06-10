@@ -19,11 +19,13 @@ import com.cxz.androidcustomview.activity.ImagePreviewActivity;
 import com.cxz.androidcustomview.activity.JDPullRefreshActivity;
 import com.cxz.androidcustomview.activity.LoadingActivity;
 import com.cxz.androidcustomview.activity.NumberKeyboardActivity;
+import com.cxz.androidcustomview.activity.PaletteImageViewActivity;
 import com.cxz.androidcustomview.activity.PayPsdViewActivity;
 import com.cxz.androidcustomview.activity.PwdKeyboardActivity;
 import com.cxz.androidcustomview.activity.RangeSeekBarActivity;
 import com.cxz.androidcustomview.activity.RollTextViewActivity;
 import com.cxz.androidcustomview.activity.RoundProgressBarActivity;
+import com.cxz.androidcustomview.activity.ShadowImageViewActivity;
 import com.cxz.androidcustomview.activity.TiltTextViewActivity;
 import com.cxz.androidcustomview.activity.WaveView2Activity;
 import com.cxz.androidcustomview.activity.WaveViewActivity;
@@ -77,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
         lists.add(new MainBean(CustomType.TYPE_13, "ZoomImageView"));
         lists.add(new MainBean(CustomType.TYPE_14, "礼物列表"));
         lists.add(new MainBean(CustomType.TYPE_15, "自定义圆形进度框"));
+        lists.add(new MainBean(CustomType.TYPE_16, "ShadowImageViewActivity"));
+        lists.add(new MainBean(CustomType.TYPE_17, "PaletteImageViewActivity"));
         return lists;
     }
 
@@ -131,6 +135,12 @@ public class MainActivity extends AppCompatActivity {
             case CustomType.TYPE_15:
                 startActivity(RoundProgressBarActivity.class);
                 break;
+            case CustomType.TYPE_16:
+                startActivity(ShadowImageViewActivity.class);
+                break;
+            case CustomType.TYPE_17:
+                startActivity(PaletteImageViewActivity.class);
+                break;
         }
     }
 
@@ -155,6 +165,8 @@ public class MainActivity extends AppCompatActivity {
         static final int TYPE_13 = 13;
         static final int TYPE_14 = 14;
         static final int TYPE_15 = 15;
+        static final int TYPE_16 = 16;
+        static final int TYPE_17 = 17;
     }
 
 }

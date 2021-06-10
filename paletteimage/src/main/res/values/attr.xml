@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="PaletteImageView">
+        <attr name="paletteRadius" format="dimension" />
+        <attr name="paletteSrc" format="reference" />
+        <attr name="palettePadding" format="dimension" />
+        <attr name="paletteOffsetX" format="dimension" />
+        <attr name="paletteOffsetY" format="dimension" />
+        <attr name="paletteShadowRadius" format="dimension" />
+    </declare-styleable>
+</resources>

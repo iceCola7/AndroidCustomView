@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_shadow_image_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.cxz.shadowimage.ShadowImageView
+        android:id="@+id/iv_shadow"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:shadowRound="0dp"
+        app:shadowSrc="@mipmap/lotus" />
+
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="150" />
+
+    <com.cxz.shadowimage.ShadowImageView
+        android:id="@+id/iv_shadowd"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        app:shadowColor="@color/colorPrimary"
+        app:shadowRound="5dp"
+        app:shadowSrc="@mipmap/lotus" />
+
+</LinearLayout>
+
