@@ -19,6 +19,7 @@ import com.cxz.androidcustomview.activity.GiftActivity;
 import com.cxz.androidcustomview.activity.ImagePreviewActivity;
 import com.cxz.androidcustomview.activity.JDPullRefreshActivity;
 import com.cxz.androidcustomview.activity.LoadingActivity;
+import com.cxz.androidcustomview.activity.NotificationActivity;
 import com.cxz.androidcustomview.activity.NumberKeyboardActivity;
 import com.cxz.androidcustomview.activity.PaletteImageViewActivity;
 import com.cxz.androidcustomview.activity.PayPsdViewActivity;
@@ -86,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
         lists.add(new MainBean(CustomType.TYPE_18, "BottomDialogActivity"));
         lists.add(new MainBean(CustomType.TYPE_18, "BottomDialogActivity"));
         lists.add(new MainBean(CustomType.TYPE_19, "FallViewActivity"));
+        lists.add(new MainBean(CustomType.TYPE_20, "NotificationActivity"));
         return lists;
     }
 
@@ -152,6 +154,9 @@ public class MainActivity extends AppCompatActivity {
             case CustomType.TYPE_19:
                 startActivity(FallViewActivity.class);
                 break;
+            case CustomType.TYPE_20:
+                startActivity(NotificationActivity.class);
+                break;
         }
     }
 
@@ -180,6 +185,7 @@ public class MainActivity extends AppCompatActivity {
         static final int TYPE_17 = 17;
         static final int TYPE_18 = 18;
         static final int TYPE_19 = 19;
+        static final int TYPE_20 = 20;
     }
 
 }
