@@ -36,6 +36,7 @@ import com.cxz.androidcustomview.adapter.MainAdapter;
 import com.cxz.androidcustomview.bean.MainBean;
 import com.cxz.androidcustomview.widget.SuperDividerItemDecoration;
 import com.cxz.behaviorsample.BehaviorActivity;
+import com.cxz.bottomnav.sample.BottomNavActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -90,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
         lists.add(new MainBean(CustomType.TYPE_19, "FallViewActivity"));
         lists.add(new MainBean(CustomType.TYPE_20, "NotificationActivity"));
         lists.add(new MainBean(CustomType.TYPE_21, "CoordinatorLayout+Behavior实践滑动动画"));
+        lists.add(new MainBean(CustomType.TYPE_22, "BottomNavigationView+Lottie实现底部带动画的导航栏"));
         return lists;
     }
 
@@ -162,6 +164,9 @@ public class MainActivity extends AppCompatActivity {
             case CustomType.TYPE_21:
                 startActivity(BehaviorActivity.class);
                 break;
+            case CustomType.TYPE_22:
+                startActivity(BottomNavActivity.class);
+                break;
         }
     }
 
@@ -192,6 +197,7 @@ public class MainActivity extends AppCompatActivity {
         static final int TYPE_19 = 19;
         static final int TYPE_20 = 20;
         static final int TYPE_21 = 21;
+        static final int TYPE_22 = 22;
     }
 
 }

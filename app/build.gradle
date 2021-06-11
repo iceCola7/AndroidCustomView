@@ -67,5 +67,6 @@ dependencies {
     implementation project(':fallviewlib')
     implementation project(':notificationlib')
     implementation project(':behaviorsample')
+    implementation project(':bottomnavsample')
 
 }

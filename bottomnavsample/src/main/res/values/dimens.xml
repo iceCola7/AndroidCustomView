@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 处理 BottomNavigationView 点击放大 -->
+    <dimen name="design_bottom_navigation_active_text_size">12sp</dimen>
+    <dimen name="design_bottom_navigation_text_size">12sp</dimen>
+    <!-- 设置导航栏高度 -->
+    <dimen name="design_bottom_navigation_height">60dp</dimen>
+    <dimen name="design_bottom_navigation_elevation">4dp</dimen>
+    <dimen name="design_bottom_navigation_margin">0dp</dimen>
+
+</resources>
