@@ -71,5 +71,6 @@ dependencies {
     implementation project(':explosionlib')
     implementation project(':flowlayoutlib')
     implementation project(':selectcitysample')
+    implementation project(':bigviewlib')
 
 }

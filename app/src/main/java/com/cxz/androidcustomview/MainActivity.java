@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.cxz.androidcustomview.activity.BankCardActivity;
+import com.cxz.androidcustomview.activity.BigViewActivity;
 import com.cxz.androidcustomview.activity.BubbleDrawViewActivity;
 import com.cxz.androidcustomview.activity.CircleIndicatorActivity;
 import com.cxz.androidcustomview.activity.ExplosionViewActivity;
@@ -98,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
         lists.add(new MainBean(CustomType.TYPE_23, "粒子爆炸效果"));
         lists.add(new MainBean(CustomType.TYPE_24, "流式布局"));
         lists.add(new MainBean(CustomType.TYPE_25, "城市、联系人选择列表"));
+        lists.add(new MainBean(CustomType.TYPE_26, "加载长图View"));
         return lists;
     }
 
@@ -182,6 +184,9 @@ public class MainActivity extends AppCompatActivity {
             case CustomType.TYPE_25:
                 startActivity(SelectCityActivity.class);
                 break;
+            case CustomType.TYPE_26:
+                startActivity(BigViewActivity.class);
+                break;
         }
     }
 
@@ -216,6 +221,7 @@ public class MainActivity extends AppCompatActivity {
         static final int TYPE_23 = 23;
         static final int TYPE_24 = 24;
         static final int TYPE_25 = 25;
+        static final int TYPE_26 = 26;
     }
 
 }
