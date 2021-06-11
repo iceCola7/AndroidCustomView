@@ -1,3 +1,4 @@
 include ':app', ':numkeyborad', ':circleindicator', ':tilt-textview', ':roll-textview', ':marqueeview', ':jdpulltorefresh', ':bubbledragview', ':rangeseekbarlib'
 include ':shadowimage'
 include ':paletteimage'
+include ':dialoglib'

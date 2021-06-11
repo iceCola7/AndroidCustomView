@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.cxz.androidcustomview.activity.BankCardActivity;
+import com.cxz.androidcustomview.activity.bottomdialog.BottomDialogActivity;
 import com.cxz.androidcustomview.activity.BubbleDrawViewActivity;
 import com.cxz.androidcustomview.activity.CircleIndicatorActivity;
 import com.cxz.androidcustomview.activity.GiftActivity;
@@ -81,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         lists.add(new MainBean(CustomType.TYPE_15, "自定义圆形进度框"));
         lists.add(new MainBean(CustomType.TYPE_16, "ShadowImageViewActivity"));
         lists.add(new MainBean(CustomType.TYPE_17, "PaletteImageViewActivity"));
+        lists.add(new MainBean(CustomType.TYPE_18, "BottomDialogActivity"));
         return lists;
     }
 
@@ -141,6 +143,9 @@ public class MainActivity extends AppCompatActivity {
             case CustomType.TYPE_17:
                 startActivity(PaletteImageViewActivity.class);
                 break;
+            case CustomType.TYPE_18:
+                startActivity(BottomDialogActivity.class);
+                break;
         }
     }
 
@@ -167,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
         static final int TYPE_15 = 15;
         static final int TYPE_16 = 16;
         static final int TYPE_17 = 17;
+        static final int TYPE_18 = 18;
     }
 
 }

@@ -63,4 +63,5 @@ dependencies {
     implementation project(':rangeseekbarlib')
     implementation project(':shadowimage')
     implementation project(':paletteimage')
+    implementation project(':dialoglib')
 }
