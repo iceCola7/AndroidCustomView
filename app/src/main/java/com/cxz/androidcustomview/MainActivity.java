@@ -39,6 +39,7 @@ import com.cxz.androidcustomview.bean.MainBean;
 import com.cxz.androidcustomview.widget.SuperDividerItemDecoration;
 import com.cxz.behaviorsample.BehaviorActivity;
 import com.cxz.bottomnav.sample.BottomNavActivity;
+import com.cxz.selectcity.sample.SelectCityActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -96,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
         lists.add(new MainBean(CustomType.TYPE_22, "BottomNavigationView+Lottie实现底部带动画的导航栏"));
         lists.add(new MainBean(CustomType.TYPE_23, "粒子爆炸效果"));
         lists.add(new MainBean(CustomType.TYPE_24, "流式布局"));
+        lists.add(new MainBean(CustomType.TYPE_25, "城市、联系人选择列表"));
         return lists;
     }
 
@@ -177,6 +179,9 @@ public class MainActivity extends AppCompatActivity {
             case CustomType.TYPE_24:
                 startActivity(FlowLayoutActivity.class);
                 break;
+            case CustomType.TYPE_25:
+                startActivity(SelectCityActivity.class);
+                break;
         }
     }
 
@@ -210,6 +215,7 @@ public class MainActivity extends AppCompatActivity {
         static final int TYPE_22 = 22;
         static final int TYPE_23 = 23;
         static final int TYPE_24 = 24;
+        static final int TYPE_25 = 25;
     }
 
 }

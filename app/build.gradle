@@ -70,5 +70,6 @@ dependencies {
     implementation project(':bottomnavsample')
     implementation project(':explosionlib')
     implementation project(':flowlayoutlib')
+    implementation project(':selectcitysample')
 
 }
