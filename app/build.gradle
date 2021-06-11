@@ -66,5 +66,6 @@ dependencies {
     implementation project(':dialoglib')
     implementation project(':fallviewlib')
     implementation project(':notificationlib')
+    implementation project(':behaviorsample')
 
 }

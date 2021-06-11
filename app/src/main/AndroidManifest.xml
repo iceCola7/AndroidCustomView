@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cxz.androidcustomview" >
+    package="com.cxz.androidcustomview">
 
     <application
         android:allowBackup="true"
@@ -8,9 +8,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
-        <activity android:name=".activity.NotificationActivity" >
-        </activity>
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.NotificationActivity" />
         <activity android:name=".activity.FallViewActivity" />
         <activity android:name=".activity.bottomdialog.BottomDialogActivity" />
         <activity android:name=".activity.PaletteImageViewActivity" />
@@ -18,7 +17,7 @@
         <activity android:name=".activity.RoundProgressBarActivity" />
         <activity android:name=".activity.GiftActivity" />
         <activity android:name=".activity.ImagePreviewActivity" />
-        <activity android:name=".MainActivity" >
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

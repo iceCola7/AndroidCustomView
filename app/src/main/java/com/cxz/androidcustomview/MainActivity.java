@@ -35,6 +35,7 @@ import com.cxz.androidcustomview.activity.bottomdialog.BottomDialogActivity;
 import com.cxz.androidcustomview.adapter.MainAdapter;
 import com.cxz.androidcustomview.bean.MainBean;
 import com.cxz.androidcustomview.widget.SuperDividerItemDecoration;
+import com.cxz.behaviorsample.BehaviorActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -88,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         lists.add(new MainBean(CustomType.TYPE_18, "BottomDialogActivity"));
         lists.add(new MainBean(CustomType.TYPE_19, "FallViewActivity"));
         lists.add(new MainBean(CustomType.TYPE_20, "NotificationActivity"));
+        lists.add(new MainBean(CustomType.TYPE_21, "CoordinatorLayout+Behavior实践滑动动画"));
         return lists;
     }
 
@@ -157,6 +159,9 @@ public class MainActivity extends AppCompatActivity {
             case CustomType.TYPE_20:
                 startActivity(NotificationActivity.class);
                 break;
+            case CustomType.TYPE_21:
+                startActivity(BehaviorActivity.class);
+                break;
         }
     }
 
@@ -186,6 +191,7 @@ public class MainActivity extends AppCompatActivity {
         static final int TYPE_18 = 18;
         static final int TYPE_19 = 19;
         static final int TYPE_20 = 20;
+        static final int TYPE_21 = 21;
     }
 
 }
