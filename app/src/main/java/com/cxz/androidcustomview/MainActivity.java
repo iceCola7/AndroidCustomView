@@ -12,9 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.cxz.androidcustomview.activity.BankCardActivity;
-import com.cxz.androidcustomview.activity.bottomdialog.BottomDialogActivity;
 import com.cxz.androidcustomview.activity.BubbleDrawViewActivity;
 import com.cxz.androidcustomview.activity.CircleIndicatorActivity;
+import com.cxz.androidcustomview.activity.FallViewActivity;
 import com.cxz.androidcustomview.activity.GiftActivity;
 import com.cxz.androidcustomview.activity.ImagePreviewActivity;
 import com.cxz.androidcustomview.activity.JDPullRefreshActivity;
@@ -30,6 +30,7 @@ import com.cxz.androidcustomview.activity.ShadowImageViewActivity;
 import com.cxz.androidcustomview.activity.TiltTextViewActivity;
 import com.cxz.androidcustomview.activity.WaveView2Activity;
 import com.cxz.androidcustomview.activity.WaveViewActivity;
+import com.cxz.androidcustomview.activity.bottomdialog.BottomDialogActivity;
 import com.cxz.androidcustomview.adapter.MainAdapter;
 import com.cxz.androidcustomview.bean.MainBean;
 import com.cxz.androidcustomview.widget.SuperDividerItemDecoration;
@@ -83,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
         lists.add(new MainBean(CustomType.TYPE_16, "ShadowImageViewActivity"));
         lists.add(new MainBean(CustomType.TYPE_17, "PaletteImageViewActivity"));
         lists.add(new MainBean(CustomType.TYPE_18, "BottomDialogActivity"));
+        lists.add(new MainBean(CustomType.TYPE_18, "BottomDialogActivity"));
+        lists.add(new MainBean(CustomType.TYPE_19, "FallViewActivity"));
         return lists;
     }
 
@@ -146,6 +149,9 @@ public class MainActivity extends AppCompatActivity {
             case CustomType.TYPE_18:
                 startActivity(BottomDialogActivity.class);
                 break;
+            case CustomType.TYPE_19:
+                startActivity(FallViewActivity.class);
+                break;
         }
     }
 
@@ -173,6 +179,7 @@ public class MainActivity extends AppCompatActivity {
         static final int TYPE_16 = 16;
         static final int TYPE_17 = 17;
         static final int TYPE_18 = 18;
+        static final int TYPE_19 = 19;
     }
 
 }

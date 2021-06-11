@@ -2,3 +2,4 @@ include ':app', ':numkeyborad', ':circleindicator', ':tilt-textview', ':roll-tex
 include ':shadowimage'
 include ':paletteimage'
 include ':dialoglib'
+include ':fallviewlib'
