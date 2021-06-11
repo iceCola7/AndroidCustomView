@@ -69,5 +69,6 @@ dependencies {
     implementation project(':behaviorsample')
     implementation project(':bottomnavsample')
     implementation project(':explosionlib')
+    implementation project(':flowlayoutlib')
 
 }
