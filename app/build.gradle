@@ -68,5 +68,6 @@ dependencies {
     implementation project(':notificationlib')
     implementation project(':behaviorsample')
     implementation project(':bottomnavsample')
+    implementation project(':explosionlib')
 
 }

@@ -14,6 +14,7 @@ import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.cxz.androidcustomview.activity.BankCardActivity;
 import com.cxz.androidcustomview.activity.BubbleDrawViewActivity;
 import com.cxz.androidcustomview.activity.CircleIndicatorActivity;
+import com.cxz.androidcustomview.activity.ExplosionViewActivity;
 import com.cxz.androidcustomview.activity.FallViewActivity;
 import com.cxz.androidcustomview.activity.GiftActivity;
 import com.cxz.androidcustomview.activity.ImagePreviewActivity;
@@ -92,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         lists.add(new MainBean(CustomType.TYPE_20, "NotificationActivity"));
         lists.add(new MainBean(CustomType.TYPE_21, "CoordinatorLayout+Behavior实践滑动动画"));
         lists.add(new MainBean(CustomType.TYPE_22, "BottomNavigationView+Lottie实现底部带动画的导航栏"));
+        lists.add(new MainBean(CustomType.TYPE_23, "粒子爆炸效果"));
         return lists;
     }
 
@@ -167,6 +169,9 @@ public class MainActivity extends AppCompatActivity {
             case CustomType.TYPE_22:
                 startActivity(BottomNavActivity.class);
                 break;
+            case CustomType.TYPE_23:
+                startActivity(ExplosionViewActivity.class);
+                break;
         }
     }
 
@@ -198,6 +203,7 @@ public class MainActivity extends AppCompatActivity {
         static final int TYPE_20 = 20;
         static final int TYPE_21 = 21;
         static final int TYPE_22 = 22;
+        static final int TYPE_23 = 23;
     }
 
 }
