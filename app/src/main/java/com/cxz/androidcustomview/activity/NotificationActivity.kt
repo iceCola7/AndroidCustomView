@@ -15,7 +15,7 @@ class NotificationActivity : AppCompatActivity() {
 
         button.setOnClickListener {
             val intent = Intent(this, NotificationActivity::class.java)
-            showNotification("测试通知栏标题", "测试通知栏内容", intent)
+            showNotification("测试通知栏标题", "", "测试通知栏内容", intent)
         }
 
     }
