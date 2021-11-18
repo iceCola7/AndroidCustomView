@@ -15,6 +15,7 @@ import com.cxz.androidcustomview.activity.BankCardActivity;
 import com.cxz.androidcustomview.activity.BigViewActivity;
 import com.cxz.androidcustomview.activity.BubbleDrawViewActivity;
 import com.cxz.androidcustomview.activity.CircleIndicatorActivity;
+import com.cxz.androidcustomview.activity.DropDownMenuActivity;
 import com.cxz.androidcustomview.activity.ExplosionViewActivity;
 import com.cxz.androidcustomview.activity.FallViewActivity;
 import com.cxz.androidcustomview.activity.FlowLayoutActivity;
@@ -91,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
         lists.add(new MainBean(CustomType.TYPE_16, "ShadowImageViewActivity"));
         lists.add(new MainBean(CustomType.TYPE_17, "PaletteImageViewActivity"));
         lists.add(new MainBean(CustomType.TYPE_18, "BottomDialogActivity"));
-        lists.add(new MainBean(CustomType.TYPE_18, "BottomDialogActivity"));
         lists.add(new MainBean(CustomType.TYPE_19, "FallViewActivity"));
         lists.add(new MainBean(CustomType.TYPE_20, "NotificationActivity"));
         lists.add(new MainBean(CustomType.TYPE_21, "CoordinatorLayout+Behavior实践滑动动画"));
@@ -100,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
         lists.add(new MainBean(CustomType.TYPE_24, "流式布局"));
         lists.add(new MainBean(CustomType.TYPE_25, "城市、联系人选择列表"));
         lists.add(new MainBean(CustomType.TYPE_26, "加载长图View"));
+        lists.add(new MainBean(CustomType.TYPE_27, "下拉菜单"));
         return lists;
     }
 
@@ -187,6 +188,9 @@ public class MainActivity extends AppCompatActivity {
             case CustomType.TYPE_26:
                 startActivity(BigViewActivity.class);
                 break;
+            case CustomType.TYPE_27:
+                startActivity(DropDownMenuActivity.class);
+                break;
         }
     }
 
@@ -222,6 +226,7 @@ public class MainActivity extends AppCompatActivity {
         static final int TYPE_24 = 24;
         static final int TYPE_25 = 25;
         static final int TYPE_26 = 26;
+        static final int TYPE_27 = 27;
     }
 
 }

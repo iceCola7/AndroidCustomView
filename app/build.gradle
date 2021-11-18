@@ -72,5 +72,6 @@ dependencies {
     implementation project(':flowlayoutlib')
     implementation project(':selectcitysample')
     implementation project(':bigviewlib')
+    implementation project(':drapdownmenulib')
 
 }
