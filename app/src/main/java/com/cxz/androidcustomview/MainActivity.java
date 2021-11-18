@@ -91,9 +91,9 @@ public class MainActivity extends AppCompatActivity {
         lists.add(new MainBean(CustomType.TYPE_15, "自定义圆形进度框"));
         lists.add(new MainBean(CustomType.TYPE_16, "ShadowImageViewActivity"));
         lists.add(new MainBean(CustomType.TYPE_17, "PaletteImageViewActivity"));
-        lists.add(new MainBean(CustomType.TYPE_18, "BottomDialogActivity"));
-        lists.add(new MainBean(CustomType.TYPE_19, "FallViewActivity"));
-        lists.add(new MainBean(CustomType.TYPE_20, "NotificationActivity"));
+        lists.add(new MainBean(CustomType.TYPE_18, "底部弹出Dialog"));
+        lists.add(new MainBean(CustomType.TYPE_19, "雪花飘落效果"));
+        lists.add(new MainBean(CustomType.TYPE_20, "通知栏"));
         lists.add(new MainBean(CustomType.TYPE_21, "CoordinatorLayout+Behavior实践滑动动画"));
         lists.add(new MainBean(CustomType.TYPE_22, "BottomNavigationView+Lottie实现底部带动画的导航栏"));
         lists.add(new MainBean(CustomType.TYPE_23, "粒子爆炸效果"));

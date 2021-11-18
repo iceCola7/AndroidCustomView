@@ -4,11 +4,11 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 30
     defaultConfig {
         applicationId "com.cxz.androidcustomview"
         minSdkVersion 21
-        targetSdkVersion 28
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
@@ -44,8 +44,8 @@ dependencies {
 
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
     // butterknife
-    implementation 'com.jakewharton:butterknife:10.2.2'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.2'
+    // implementation 'com.jakewharton:butterknife:10.2.2'
+    // annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.2'
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
     implementation 'me.relex:circleindicator:2.1.4'
     implementation 'com.zhy:base-rvadapter:3.0.3'

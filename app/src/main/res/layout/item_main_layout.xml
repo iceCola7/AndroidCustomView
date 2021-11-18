@@ -5,17 +5,20 @@
 
     <TextView
         android:id="@+id/tv_title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:layout_toStartOf="@+id/arrow_iv"
         android:padding="16dp"
         android:textSize="16sp" />
 
     <ImageView
+        android:id="@+id/arrow_iv"
         android:layout_width="14dp"
         android:layout_height="14dp"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
         android:src="@mipmap/arrow_right_gray" />
 
 </RelativeLayout>

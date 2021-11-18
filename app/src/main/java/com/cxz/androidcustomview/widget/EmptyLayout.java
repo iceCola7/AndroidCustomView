@@ -17,10 +17,6 @@ import com.github.ybq.android.spinkit.SpinKitView;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
 /**
  * Created by chenxz on 2017/12/5.
  */
@@ -36,13 +32,9 @@ public class EmptyLayout extends FrameLayout {
     private int mBgColor;
     private OnRetryListener mOnRetryListener;
 
-    @BindView(R.id.tv_net_error)
     TextView mTvEmptyMessage;
-    @BindView(R.id.rl_empty_container)
     View mRlEmptyContainer;
-    @BindView(R.id.empty_loading)
     SpinKitView mEmptyLoading;
-    @BindView(R.id.empty_layout)
     FrameLayout mEmptyLayout;
 
     public EmptyLayout(@NonNull Context context) {
@@ -62,10 +54,21 @@ public class EmptyLayout extends FrameLayout {
         } finally {
             a.recycle();
         }
-        View.inflate(mContext, R.layout.layout_empty, this);
-        ButterKnife.bind(this);
+        View view = View.inflate(mContext, R.layout.layout_empty, this);
+        mTvEmptyMessage = view.findViewById(R.id.tv_net_error);
+        mRlEmptyContainer = view.findViewById(R.id.rl_empty_container);
+        mEmptyLoading = view.findViewById(R.id.empty_loading);
+        mEmptyLayout = view.findViewById(R.id.empty_layout);
+
         mEmptyLayout.setBackgroundColor(mBgColor);
         switchEmptyView();
+
+        mTvEmptyMessage.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onRetryClick();
+            }
+        });
     }
 
     private void switchEmptyView() {
@@ -87,8 +90,7 @@ public class EmptyLayout extends FrameLayout {
         }
     }
 
-    @OnClick(R.id.tv_net_error)
-    public void onClick() {
+    private void onRetryClick() {
         if (mOnRetryListener != null) {
             mOnRetryListener.onRetry();
         }
