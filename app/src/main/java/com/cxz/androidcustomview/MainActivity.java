@@ -3,9 +3,11 @@ package com.cxz.androidcustomview;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -50,11 +52,21 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private MainAdapter mAdapter;
+    private Toolbar toolbar;
+    private TextView titleTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        toolbar = findViewById(R.id.toolbar);
+        titleTV = findViewById(R.id.title_tv);
+
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+        titleTV.setText("Main");
+
         mRecyclerView = findViewById(R.id.recycler_view);
 
         mAdapter = new MainAdapter(getDatas());
