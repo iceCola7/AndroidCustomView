@@ -1,19 +1,23 @@
 package com.cxz.androidcustomview.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 
 import com.cxz.androidcustomview.R;
+import com.cxz.androidcustomview.base.BaseActivity;
 import com.cxz.numkeyborad.PopEnterPassword;
 
-public class PwdKeyboardActivity extends AppCompatActivity {
+public class PwdKeyboardActivity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pwd_keyboard);
+    protected int attachLayoutRes() {
+        return R.layout.activity_pwd_keyboard;
+    }
+
+    @Override
+    protected void initView() {
+        String title = getIntent().getStringExtra("title");
+        setToolbarTitle(title);
 
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,6 +28,5 @@ public class PwdKeyboardActivity extends AppCompatActivity {
                         Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0); // 设置layout在PopupWindow中显示的位置
             }
         });
-
     }
 }

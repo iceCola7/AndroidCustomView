@@ -1,13 +1,9 @@
 package com.cxz.androidcustomview;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -39,6 +35,7 @@ import com.cxz.androidcustomview.activity.WaveView2Activity;
 import com.cxz.androidcustomview.activity.WaveViewActivity;
 import com.cxz.androidcustomview.activity.bottomdialog.BottomDialogActivity;
 import com.cxz.androidcustomview.adapter.MainAdapter;
+import com.cxz.androidcustomview.base.BaseActivity;
 import com.cxz.androidcustomview.bean.MainBean;
 import com.cxz.androidcustomview.widget.SuperDividerItemDecoration;
 import com.cxz.behaviorsample.BehaviorActivity;
@@ -48,24 +45,19 @@ import com.cxz.selectcity.sample.SelectCityActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private RecyclerView mRecyclerView;
     private MainAdapter mAdapter;
-    private Toolbar toolbar;
-    private TextView titleTV;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected int attachLayoutRes() {
+        return R.layout.activity_main;
+    }
 
-        toolbar = findViewById(R.id.toolbar);
-        titleTV = findViewById(R.id.title_tv);
-
-        toolbar.setTitle("");
-        setSupportActionBar(toolbar);
-        titleTV.setText("Main");
+    @Override
+    protected void initView() {
+        setToolbarTitle("Main", false);
 
         mRecyclerView = findViewById(R.id.recycler_view);
 
@@ -118,96 +110,99 @@ public class MainActivity extends AppCompatActivity {
 
     private void itemClick(BaseQuickAdapter adapter, View view, int position) {
         MainBean bean = (MainBean) adapter.getData().get(position);
+        String title = bean.gettitle();
         switch (bean.getType()) {
             case CustomType.TYPE_0:
-                startActivity(BankCardActivity.class);
+                startActivity(title, BankCardActivity.class);
                 break;
             case CustomType.TYPE_1:
-                startActivity(PayPsdViewActivity.class);
+                startActivity(title, PayPsdViewActivity.class);
                 break;
             case CustomType.TYPE_2:
-                startActivity(WaveViewActivity.class);
+                startActivity(title, WaveViewActivity.class);
                 break;
             case CustomType.TYPE_3:
-                startActivity(WaveView2Activity.class);
+                startActivity(title, WaveView2Activity.class);
                 break;
             case CustomType.TYPE_4:
-                startActivity(LoadingActivity.class);
+                startActivity(title, LoadingActivity.class);
                 break;
             case CustomType.TYPE_5:
-                startActivity(NumberKeyboardActivity.class);
+                startActivity(title, NumberKeyboardActivity.class);
                 break;
             case CustomType.TYPE_6:
-                startActivity(PwdKeyboardActivity.class);
+                startActivity(title, PwdKeyboardActivity.class);
                 break;
             case CustomType.TYPE_7:
-                startActivity(CircleIndicatorActivity.class);
+                startActivity(title, CircleIndicatorActivity.class);
                 break;
             case CustomType.TYPE_8:
-                startActivity(TiltTextViewActivity.class);
+                startActivity(title, TiltTextViewActivity.class);
                 break;
             case CustomType.TYPE_9:
-                startActivity(RollTextViewActivity.class);
+                startActivity(title, RollTextViewActivity.class);
                 break;
             case CustomType.TYPE_10:
-                startActivity(JDPullRefreshActivity.class);
+                startActivity(title, JDPullRefreshActivity.class);
                 break;
             case CustomType.TYPE_11:
-                startActivity(BubbleDrawViewActivity.class);
+                startActivity(title, BubbleDrawViewActivity.class);
                 break;
             case CustomType.TYPE_12:
-                startActivity(RangeSeekBarActivity.class);
+                startActivity(title, RangeSeekBarActivity.class);
                 break;
             case CustomType.TYPE_13:
-                startActivity(ImagePreviewActivity.class);
+                startActivity(title, ImagePreviewActivity.class);
                 break;
             case CustomType.TYPE_14:
-                startActivity(GiftActivity.class);
+                startActivity(title, GiftActivity.class);
                 break;
             case CustomType.TYPE_15:
-                startActivity(RoundProgressBarActivity.class);
+                startActivity(title, RoundProgressBarActivity.class);
                 break;
             case CustomType.TYPE_16:
-                startActivity(ShadowImageViewActivity.class);
+                startActivity(title, ShadowImageViewActivity.class);
                 break;
             case CustomType.TYPE_17:
-                startActivity(PaletteImageViewActivity.class);
+                startActivity(title, PaletteImageViewActivity.class);
                 break;
             case CustomType.TYPE_18:
-                startActivity(BottomDialogActivity.class);
+                startActivity(title, BottomDialogActivity.class);
                 break;
             case CustomType.TYPE_19:
-                startActivity(FallViewActivity.class);
+                startActivity(title, FallViewActivity.class);
                 break;
             case CustomType.TYPE_20:
-                startActivity(NotificationActivity.class);
+                startActivity(title, NotificationActivity.class);
                 break;
             case CustomType.TYPE_21:
-                startActivity(BehaviorActivity.class);
+                startActivity(title, BehaviorActivity.class);
                 break;
             case CustomType.TYPE_22:
-                startActivity(BottomNavActivity.class);
+                startActivity(title, BottomNavActivity.class);
                 break;
             case CustomType.TYPE_23:
-                startActivity(ExplosionViewActivity.class);
+                startActivity(title, ExplosionViewActivity.class);
                 break;
             case CustomType.TYPE_24:
-                startActivity(FlowLayoutActivity.class);
+                startActivity(title, FlowLayoutActivity.class);
                 break;
             case CustomType.TYPE_25:
-                startActivity(SelectCityActivity.class);
+                startActivity(title, SelectCityActivity.class);
                 break;
             case CustomType.TYPE_26:
-                startActivity(BigViewActivity.class);
+                startActivity(title, BigViewActivity.class);
                 break;
             case CustomType.TYPE_27:
-                startActivity(DropDownMenuActivity.class);
+                startActivity(title, DropDownMenuActivity.class);
                 break;
         }
     }
 
-    private void startActivity(Class clazz) {
-        startActivity(new Intent(MainActivity.this, clazz));
+    private void startActivity(String title, Class clazz) {
+        Intent intent = new Intent(MainActivity.this, clazz);
+        intent.putExtra("title", title);
+        startActivity(intent);
     }
 
     static class CustomType {

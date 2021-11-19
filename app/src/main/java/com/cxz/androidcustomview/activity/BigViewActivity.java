@@ -1,21 +1,23 @@
 package com.cxz.androidcustomview.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-
 import com.cxz.androidcustomview.R;
+import com.cxz.androidcustomview.base.BaseActivity;
 import com.cxz.bigviewlib.BigView;
 
 import java.io.IOException;
 import java.io.InputStream;
 
-public class BigViewActivity extends AppCompatActivity {
+public class BigViewActivity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_big_view);
+    protected int attachLayoutRes() {
+        return R.layout.activity_big_view;
+    }
+
+    @Override
+    protected void initView() {
+        String title = getIntent().getStringExtra("title");
+        setToolbarTitle(title);
 
         BigView bigView = findViewById(R.id.bigView);
         InputStream is = null;

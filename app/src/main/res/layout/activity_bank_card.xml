@@ -3,53 +3,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context=".activity.BankCardActivity">
 
-    <com.cxz.androidcustomview.widget.BankCardEditText
-        android:id="@+id/et_bank_card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@null"
-        android:hint="输入银行卡号"
-        android:maxLength="26"
-        android:maxLines="1" />
+    <include layout="@layout/toolbar" />
 
-    <EditText
-        android:id="@+id/et_bank_card2"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@null"
-        android:digits="0123456789"
-        android:hint="输入银行卡号"
-        android:inputType="number"
-        android:maxLength="26"
-        android:maxLines="1" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <EditText
-        android:id="@+id/et_id_card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@null"
-        android:digits="0123456789abcefghijklmnopqrstuvwxyzABCEFGHIJKLMNOPQRSTUVWXYZ"
-        android:hint="输入身份证号"
-        android:inputType="number"
-        android:maxLength="18"
-        android:maxLines="1" />
+        <com.cxz.androidcustomview.widget.BankCardEditText
+            android:id="@+id/et_bank_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@null"
+            android:hint="输入银行卡号"
+            android:maxLength="26"
+            android:maxLines="1" />
 
-    <EditText
-        android:id="@+id/et_mobile_phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@null"
-        android:digits="0123456789"
-        android:hint="输入手机号"
-        android:inputType="phone"
-        android:maxLength="11"
-        android:maxLines="1" />
+        <EditText
+            android:id="@+id/et_bank_card2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@null"
+            android:digits="0123456789"
+            android:hint="输入银行卡号"
+            android:inputType="number"
+            android:maxLength="26"
+            android:maxLines="1" />
+
+        <EditText
+            android:id="@+id/et_id_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@null"
+            android:digits="0123456789abcefghijklmnopqrstuvwxyzABCEFGHIJKLMNOPQRSTUVWXYZ"
+            android:hint="输入身份证号"
+            android:inputType="number"
+            android:maxLength="18"
+            android:maxLines="1" />
+
+        <EditText
+            android:id="@+id/et_mobile_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@null"
+            android:digits="0123456789"
+            android:hint="输入手机号"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:maxLines="1" />
+
+    </LinearLayout>
 
 </LinearLayout>

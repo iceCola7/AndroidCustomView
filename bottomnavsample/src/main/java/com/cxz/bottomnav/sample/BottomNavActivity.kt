@@ -1,11 +1,11 @@
 package com.cxz.bottomnav.sample
 
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.annotation.Nullable
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.forEach
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
@@ -55,6 +55,12 @@ class BottomNavActivity : AppCompatActivity() {
     override fun onCreate(@Nullable savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bottom_nav)
+
+        val title = intent.getStringExtra("title")
+        setSupportActionBar(toolbar)
+        toolbar.title = ""
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        title_tv.text = title
 
         initViewPager()
 
@@ -210,6 +216,13 @@ class BottomNavActivity : AppCompatActivity() {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public fun showMineDotEvent(event: MineRedDotEvent) {
         showMineDot(event.isShow)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            onBackPressed()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onDestroy() {

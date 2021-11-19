@@ -1,10 +1,9 @@
 package com.cxz.androidcustomview.activity;
 
-import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.cxz.androidcustomview.R;
+import com.cxz.androidcustomview.base.BaseActivity;
 import com.cxz.jd.pulltorefresh.JDPullToRefreshRecyclerView;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
@@ -12,15 +11,20 @@ import com.zhy.adapter.recyclerview.base.ViewHolder;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JDPullRefreshActivity extends AppCompatActivity {
+public class JDPullRefreshActivity extends BaseActivity {
 
     private JDPullToRefreshRecyclerView mRecyclerView;
     private List<String> mDatas = new ArrayList<>();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_jdpull_refresh);
+    protected int attachLayoutRes() {
+        return R.layout.activity_jdpull_refresh;
+    }
+
+    @Override
+    protected void initView() {
+        String title = getIntent().getStringExtra("title");
+        setToolbarTitle(title);
 
         initDatas();
         mRecyclerView = findViewById(R.id.custom_pull_recyclerview);
@@ -61,13 +65,13 @@ public class JDPullRefreshActivity extends AppCompatActivity {
     }
 
     private void initDatas() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             mDatas.add("买买买!");
         }
     }
 
     private void refreshDatas() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             mDatas.add("剁剁剁!");
         }
     }

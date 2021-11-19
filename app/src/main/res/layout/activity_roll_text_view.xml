@@ -5,10 +5,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <include layout="@layout/toolbar" />
+
     <LinearLayout
         android:id="@+id/ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:orientation="vertical">
 
         <Button
@@ -92,8 +95,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:paddingLeft="10dp"
         android:background="@drawable/bg_marqueeview"
+        android:paddingLeft="10dp"
         android:paddingRight="10dp">
 
         <com.cxz.marqueeview.MarqueeView

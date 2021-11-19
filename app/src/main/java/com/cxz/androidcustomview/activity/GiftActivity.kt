@@ -1,17 +1,21 @@
 package com.cxz.androidcustomview.activity
 
-import android.os.Bundle
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
 import com.cxz.androidcustomview.R
 import com.cxz.androidcustomview.adapter.gift.HorizontalScrollAdapter
+import com.cxz.androidcustomview.base.BaseActivity
 import com.cxz.androidcustomview.bean.GiftItemBean
 import kotlinx.android.synthetic.main.activity_gift.*
 
-class GiftActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gift)
+class GiftActivity : BaseActivity() {
+
+    override fun attachLayoutRes(): Int {
+        return R.layout.activity_gift
+    }
+
+    override fun initView() {
+        val title = intent.getStringExtra("title")
+        setToolbarTitle(title)
 
         val pageSize = 8
         val giftItemList = initData(pageSize)
@@ -21,7 +25,6 @@ class GiftActivity : AppCompatActivity() {
         }
         viewPager.adapter = horizontalScrollAdapter
         indicator.setViewPager(viewPager)
-
     }
 
     private fun initData(pageSize: Int): List<List<GiftItemBean>> {

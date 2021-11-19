@@ -1,19 +1,17 @@
 package com.cxz.androidcustomview.activity;
 
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.cxz.androidcustomview.R;
+import com.cxz.androidcustomview.base.BaseActivity;
 import com.cxz.flowlayoutlib.FlowAdapter;
 import com.cxz.flowlayoutlib.FlowLayout;
 
 import java.util.Arrays;
 
-public class FlowLayoutActivity extends AppCompatActivity {
+public class FlowLayoutActivity extends BaseActivity {
 
     private FlowLayout flow_layout;
 
@@ -23,9 +21,14 @@ public class FlowLayoutActivity extends AppCompatActivity {
             "Android", "Welcome", "Button ImageView", "TextView", "Helloworld", "Android", "Welcome Hello", "Button Text"};
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_flow_layout);
+    protected int attachLayoutRes() {
+        return R.layout.activity_flow_layout;
+    }
+
+    @Override
+    protected void initView() {
+        String title = getIntent().getStringExtra("title");
+        setToolbarTitle(title);
 
         flow_layout = findViewById(R.id.flow_layout);
         mLayoutInflater = LayoutInflater.from(this);
@@ -39,6 +42,5 @@ public class FlowLayoutActivity extends AppCompatActivity {
                 return item;
             }
         });
-
     }
 }

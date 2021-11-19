@@ -1,14 +1,13 @@
 package com.cxz.androidcustomview.activity;
 
-import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.widget.EditText;
 
 import com.cxz.androidcustomview.R;
+import com.cxz.androidcustomview.base.BaseActivity;
 import com.cxz.androidcustomview.widget.AddSpaceTextWatcher;
 import com.cxz.androidcustomview.widget.BankCardEditText;
 
-public class BankCardActivity extends AppCompatActivity {
+public class BankCardActivity extends BaseActivity {
 
     private AddSpaceTextWatcher[] asTextWatchers = new AddSpaceTextWatcher[3];
 
@@ -18,9 +17,14 @@ public class BankCardActivity extends AppCompatActivity {
     private EditText et_mobile_phone;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bank_card);
+    protected int attachLayoutRes() {
+        return R.layout.activity_bank_card;
+    }
+
+    @Override
+    protected void initView() {
+        String title = getIntent().getStringExtra("title");
+        setToolbarTitle(title);
 
         et_bank_card = findViewById(R.id.et_bank_card);
         et_bank_card2 = findViewById(R.id.et_bank_card2);

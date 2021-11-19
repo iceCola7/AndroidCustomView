@@ -1,20 +1,24 @@
 package com.cxz.androidcustomview.activity;
 
-import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.cxz.androidcustomview.R;
+import com.cxz.androidcustomview.base.BaseActivity;
 import com.cxz.androidcustomview.widget.PayPsdInputView;
 
-public class PayPsdViewActivity extends AppCompatActivity {
+public class PayPsdViewActivity extends BaseActivity {
 
     private PayPsdInputView payPsdInputView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pay_psd_view);
+    protected int attachLayoutRes() {
+        return R.layout.activity_pay_psd_view;
+    }
+
+    @Override
+    protected void initView() {
+        String title = getIntent().getStringExtra("title");
+        setToolbarTitle(title);
 
         payPsdInputView = findViewById(R.id.password);
 
@@ -42,6 +46,5 @@ public class PayPsdViewActivity extends AppCompatActivity {
                 payPsdInputView.setComparePassword(inputPsd);
             }
         });
-
     }
 }

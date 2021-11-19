@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#efefef">
+    android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/editText"
+    <include layout="@layout/toolbar" />
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#FFFFFF"
-        android:inputType="numberDecimal"
-        android:padding="14dp"
-        android:textColor="#333333"
-        android:textSize="16sp" />
+        android:layout_height="match_parent"
+        android:background="#efefef">
 
-    <com.cxz.numkeyborad.VirtualKeyboardView
-        android:id="@+id/virtualKeyboardView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom" />
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#FFFFFF"
+            android:inputType="numberDecimal"
+            android:padding="14dp"
+            android:textColor="#333333"
+            android:textSize="16sp" />
 
-</RelativeLayout>
+        <com.cxz.numkeyborad.VirtualKeyboardView
+            android:id="@+id/virtualKeyboardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom" />
+    </RelativeLayout>
+
+</LinearLayout>

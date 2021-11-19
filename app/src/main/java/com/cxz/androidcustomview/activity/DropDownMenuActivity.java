@@ -18,6 +18,7 @@ import com.cxz.androidcustomview.R;
 import com.cxz.androidcustomview.adapter.dropdownmenu.ConstellationAdapter;
 import com.cxz.androidcustomview.adapter.dropdownmenu.GirdDropDownAdapter;
 import com.cxz.androidcustomview.adapter.dropdownmenu.ListDropDownAdapter;
+import com.cxz.androidcustomview.base.BaseActivity;
 import com.cxz.dropdownmenulib.DropDownMenu;
 
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class DropDownMenuActivity extends AppCompatActivity {
+public class DropDownMenuActivity extends BaseActivity {
 
     DropDownMenu mDropDownMenu;
     private String headers[] = {"城市", "年龄", "性别", "星座"};
@@ -44,16 +45,15 @@ public class DropDownMenuActivity extends AppCompatActivity {
     private int constellationPosition = 0;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_drop_down_menu);
+    protected int attachLayoutRes() {
+        return R.layout.activity_drop_down_menu;
+    }
+    @Override
+    protected void initView() {
+        String title = getIntent().getStringExtra("title");
+        setToolbarTitle(title);
 
         mDropDownMenu = findViewById(R.id.dropDownMenu);
-
-        initView();
-    }
-
-    private void initView() {
         //测试tabView扩展功能
         final TextView textView = (TextView) getLayoutInflater().inflate(R.layout.tab_text, null);
         textView.setLayoutParams(new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1.0f));

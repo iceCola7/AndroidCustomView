@@ -5,19 +5,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
 import com.cxz.androidcustomview.R;
+import com.cxz.androidcustomview.base.BaseActivity;
 import com.cxz.androidcustomview.util.XLog;
 import com.cxz.bubbledragview.BubbleDragView;
 
-public class BubbleDrawViewActivity extends AppCompatActivity {
+public class BubbleDrawViewActivity extends BaseActivity {
 
     private static final String TAG = BubbleDrawViewActivity.class.getName();
 
     private BubbleDragView mBubbleDragView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bubble_draw_view);
+    protected int attachLayoutRes() {
+        return R.layout.activity_bubble_draw_view;
+    }
+
+    @Override
+    protected void initView() {
+        String title = getIntent().getStringExtra("title");
+        setToolbarTitle(title);
 
         mBubbleDragView = findViewById(R.id.bubbleDragView);
         mBubbleDragView.setText("99+");

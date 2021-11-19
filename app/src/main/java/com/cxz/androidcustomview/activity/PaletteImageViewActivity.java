@@ -6,9 +6,10 @@ import android.widget.SeekBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.cxz.androidcustomview.R;
+import com.cxz.androidcustomview.base.BaseActivity;
 import com.cxz.paletteimage.PaletteImageView;
 
-public class PaletteImageViewActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
+public class PaletteImageViewActivity extends BaseActivity implements SeekBar.OnSeekBarChangeListener {
 
     private PaletteImageView paletteImageView;
     private SeekBar seekBar1;
@@ -17,9 +18,14 @@ public class PaletteImageViewActivity extends AppCompatActivity implements SeekB
     private SeekBar seekBar4;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_palette_image_view);
+    protected int attachLayoutRes() {
+        return R.layout.activity_palette_image_view;
+    }
+
+    @Override
+    protected void initView() {
+        String title = getIntent().getStringExtra("title");
+        setToolbarTitle(title);
 
         paletteImageView = findViewById(R.id.palette);
         seekBar1 = findViewById(R.id.seek1);
@@ -32,7 +38,6 @@ public class PaletteImageViewActivity extends AppCompatActivity implements SeekB
         seekBar2.setOnSeekBarChangeListener(this);
         seekBar3.setOnSeekBarChangeListener(this);
         seekBar4.setOnSeekBarChangeListener(this);
-
     }
 
     @Override

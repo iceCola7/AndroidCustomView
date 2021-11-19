@@ -1,12 +1,11 @@
 package com.cxz.androidcustomview.activity;
 
-import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
 import com.cxz.androidcustomview.R;
 import com.cxz.androidcustomview.adapter.RollTextViewAdapter;
 import com.cxz.androidcustomview.adapter.RollTextViewAdapter2;
+import com.cxz.androidcustomview.base.BaseActivity;
 import com.cxz.androidcustomview.bean.RollTextBean;
 import com.cxz.marqueeview.MarqueeView;
 import com.cxz.roll.textview.RollTextView;
@@ -14,12 +13,17 @@ import com.cxz.roll.textview.RollTextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RollTextViewActivity extends AppCompatActivity {
+public class RollTextViewActivity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_roll_text_view);
+    protected int attachLayoutRes() {
+        return R.layout.activity_roll_text_view;
+    }
+
+    @Override
+    protected void initView() {
+        String title = getIntent().getStringExtra("title");
+        setToolbarTitle(title);
 
         List<RollTextBean> list = new ArrayList<>();
         list.add(new RollTextBean("1111111", "https://www.baidu.com"));

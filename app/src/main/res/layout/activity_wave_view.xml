@@ -7,10 +7,12 @@
     android:orientation="vertical"
     tools:context=".activity.WaveViewActivity">
 
+    <include layout="@layout/toolbar" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="40dp"
         android:gravity="center"
         android:text="贝塞尔曲线实现的水波效果" />
 

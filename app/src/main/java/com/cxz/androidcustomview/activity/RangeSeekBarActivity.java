@@ -1,24 +1,28 @@
 package com.cxz.androidcustomview.activity;
 
-import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
 
 import com.cxz.androidcustomview.R;
+import com.cxz.androidcustomview.base.BaseActivity;
 import com.cxz.rangeseekbar.RangeSeekBar;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RangeSeekBarActivity extends AppCompatActivity {
+public class RangeSeekBarActivity extends BaseActivity {
 
     private String TAG = "RangeSeekBarActivity";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_range_seek_bar);
+    protected int attachLayoutRes() {
+        return R.layout.activity_range_seek_bar;
+    }
+
+    @Override
+    protected void initView() {
+        String title = getIntent().getStringExtra("title");
+        setToolbarTitle(title);
 
         RangeSeekBar rangeSeekBar = findViewById(R.id.rangeSeekBar);
         final TextView tvResult = findViewById(R.id.tv_result);

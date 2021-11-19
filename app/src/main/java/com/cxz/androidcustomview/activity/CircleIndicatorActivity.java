@@ -1,20 +1,25 @@
 package com.cxz.androidcustomview.activity;
 
-import android.os.Bundle;
-import androidx.viewpager.widget.ViewPager;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
+
+import androidx.viewpager.widget.ViewPager;
 
 import com.cxz.androidcustomview.R;
 import com.cxz.androidcustomview.adapter.MyPagerAdapter;
+import com.cxz.androidcustomview.base.BaseActivity;
 import com.cxz.circleindicator.CircleIndicator;
 
-public class CircleIndicatorActivity extends AppCompatActivity {
+public class CircleIndicatorActivity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_circle_indicator);
+    protected int attachLayoutRes() {
+        return R.layout.activity_circle_indicator;
+    }
+
+    @Override
+    protected void initView() {
+        String title = getIntent().getStringExtra("title");
+        setToolbarTitle(title);
 
         // DEFAULT
         ViewPager defaultViewpager = (ViewPager) findViewById(R.id.viewpager_default);
@@ -55,6 +60,5 @@ public class CircleIndicatorActivity extends AppCompatActivity {
                 new MyPagerAdapter(getSupportFragmentManager());
         unselectedBackgroundViewPager.setAdapter(unselectedBackgroundPagerAdapter);
         unselectedBackgroundIndicator.setViewPager(unselectedBackgroundViewPager);
-
     }
 }

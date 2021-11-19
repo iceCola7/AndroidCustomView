@@ -1,20 +1,23 @@
 package com.cxz.androidcustomview.activity;
 
-import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.cxz.androidcustomview.R;
+import com.cxz.androidcustomview.base.BaseActivity;
 import com.cxz.androidcustomview.widget.WaveBezierView;
 
-public class WaveViewActivity extends AppCompatActivity {
+public class WaveViewActivity extends BaseActivity {
 
     private WaveBezierView wave_bezier_view;
     private WaveBezierView wave_bezier_view2;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wave_view);
+    protected int attachLayoutRes() {
+        return R.layout.activity_wave_view;
+    }
+
+    @Override
+    protected void initView() {
+        String title = getIntent().getStringExtra("title");
+        setToolbarTitle(title);
 
         wave_bezier_view = findViewById(R.id.wave_bezier_view);
         wave_bezier_view2 = findViewById(R.id.wave_bezier_view2);

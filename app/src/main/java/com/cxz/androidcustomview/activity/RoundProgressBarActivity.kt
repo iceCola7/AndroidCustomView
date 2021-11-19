@@ -3,6 +3,7 @@ package com.cxz.androidcustomview.activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.cxz.androidcustomview.R
+import com.cxz.androidcustomview.base.BaseActivity
 import com.cxz.androidcustomview.dialog.LinearLoadingDialog
 import com.cxz.androidcustomview.dialog.RoundLoadingDialog
 import kotlinx.android.synthetic.main.activity_round_progress_bar.*
@@ -14,7 +15,7 @@ import kotlinx.coroutines.withContext
 /**
  * 自定义圆形加载进度框
  */
-class RoundProgressBarActivity : AppCompatActivity() {
+class RoundProgressBarActivity : BaseActivity() {
 
     private var progressNum: Int = 0
 
@@ -28,9 +29,13 @@ class RoundProgressBarActivity : AppCompatActivity() {
         LinearLoadingDialog()
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_round_progress_bar)
+    override fun attachLayoutRes(): Int {
+        return R.layout.activity_round_progress_bar
+    }
+
+    override fun initView() {
+        val title = intent.getStringExtra("title")
+        setToolbarTitle(title)
 
         button.setOnClickListener {
             progressNum = 0
@@ -43,7 +48,6 @@ class RoundProgressBarActivity : AppCompatActivity() {
             linearLoadingDialog.showDialog(supportFragmentManager)
             updateLinearProgress()
         }
-
     }
 
     private fun updateRoundProgress() {

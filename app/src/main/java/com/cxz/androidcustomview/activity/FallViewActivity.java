@@ -1,21 +1,23 @@
 package com.cxz.androidcustomview.activity;
 
-import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.cxz.androidcustomview.R;
+import com.cxz.androidcustomview.base.BaseActivity;
 import com.cxz.fallviewlib.FallObject;
 import com.cxz.fallviewlib.FallView;
 
-public class FallViewActivity extends AppCompatActivity {
+public class FallViewActivity extends BaseActivity {
 
     private FallView fallView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fall_view);
+    protected int attachLayoutRes() {
+        return R.layout.activity_fall_view;
+    }
+
+    @Override
+    protected void initView() {
+        String title = getIntent().getStringExtra("title");
+        setToolbarTitle(title);
 
         fallView = findViewById(R.id.fall_view);
 
@@ -26,6 +28,5 @@ public class FallViewActivity extends AppCompatActivity {
 
         fallView.addFallObject(fallObject, 6);
         fallView.addFallObject(fallObject2, 6);
-
     }
 }
