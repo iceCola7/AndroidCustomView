@@ -73,5 +73,6 @@ dependencies {
     implementation project(':selectcitysample')
     implementation project(':bigviewlib')
     implementation project(':drapdownmenulib')
+    implementation project(':watercamerasample')
 
 }

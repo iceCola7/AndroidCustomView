@@ -41,6 +41,7 @@ import com.cxz.androidcustomview.widget.SuperDividerItemDecoration;
 import com.cxz.behaviorsample.BehaviorActivity;
 import com.cxz.bottomnav.sample.BottomNavActivity;
 import com.cxz.selectcity.sample.SelectCityActivity;
+import com.cxz.watercamerasample.WaterCameraSampleActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -105,6 +106,7 @@ public class MainActivity extends BaseActivity {
         lists.add(new MainBean(CustomType.TYPE_25, "城市、联系人选择列表"));
         lists.add(new MainBean(CustomType.TYPE_26, "加载长图View"));
         lists.add(new MainBean(CustomType.TYPE_27, "下拉菜单"));
+        lists.add(new MainBean(CustomType.TYPE_28, "水印相机"));
         return lists;
     }
 
@@ -196,6 +198,9 @@ public class MainActivity extends BaseActivity {
             case CustomType.TYPE_27:
                 startActivity(title, DropDownMenuActivity.class);
                 break;
+            case CustomType.TYPE_28:
+                startActivity(title, WaterCameraSampleActivity.class);
+                break;
         }
     }
 
@@ -233,7 +238,8 @@ public class MainActivity extends BaseActivity {
         static final int TYPE_24 = 24;
         static final int TYPE_25 = 25;
         static final int TYPE_26 = 26;
-        static final int TYPE_27 = 27;
+        static final int TYPE_27 = 27;;
+        static final int TYPE_28 = 28;
     }
 
 }
