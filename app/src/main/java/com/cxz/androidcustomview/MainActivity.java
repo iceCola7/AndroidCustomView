@@ -40,6 +40,7 @@ import com.cxz.androidcustomview.bean.MainBean;
 import com.cxz.androidcustomview.widget.SuperDividerItemDecoration;
 import com.cxz.behaviorsample.BehaviorActivity;
 import com.cxz.bottomnav.sample.BottomNavActivity;
+import com.cxz.camerasample.CameraActivity;
 import com.cxz.selectcity.sample.SelectCityActivity;
 import com.cxz.watercamerasample.WaterCameraSampleActivity;
 
@@ -107,6 +108,7 @@ public class MainActivity extends BaseActivity {
         lists.add(new MainBean(CustomType.TYPE_26, "加载长图View"));
         lists.add(new MainBean(CustomType.TYPE_27, "下拉菜单"));
         lists.add(new MainBean(CustomType.TYPE_28, "水印相机"));
+        lists.add(new MainBean(CustomType.TYPE_29, "自定义相机"));
         return lists;
     }
 
@@ -201,6 +203,9 @@ public class MainActivity extends BaseActivity {
             case CustomType.TYPE_28:
                 startActivity(title, WaterCameraSampleActivity.class);
                 break;
+            case CustomType.TYPE_29:
+                startActivity(title, CameraActivity.class);
+                break;
         }
     }
 
@@ -240,6 +245,7 @@ public class MainActivity extends BaseActivity {
         static final int TYPE_26 = 26;
         static final int TYPE_27 = 27;;
         static final int TYPE_28 = 28;
+        static final int TYPE_29 = 29;
     }
 
 }

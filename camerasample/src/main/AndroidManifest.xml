@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cxz.camerasample">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+        <activity android:name=".CameraActivity" />
+        <activity
+            android:name=".surfaceview.SurfaceCameraActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".textureview.TextureCameraActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".glsurfaceview.GLSurfaceCameraActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".surfaceview.SurfaceCamera2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".textureview.TextureCamera2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".glsurfaceview.GLSurfaceCamera2Activity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>
