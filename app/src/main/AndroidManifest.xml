@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <activity android:name=".activity.pagetransformer.BliPageTransformerActivity" />
         <activity android:name=".activity.DropDownMenuActivity" />
         <activity android:name=".activity.BigViewActivity" />
         <activity android:name=".activity.FlowLayoutActivity" />

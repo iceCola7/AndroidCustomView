@@ -34,6 +34,7 @@ import com.cxz.androidcustomview.activity.TiltTextViewActivity;
 import com.cxz.androidcustomview.activity.WaveView2Activity;
 import com.cxz.androidcustomview.activity.WaveViewActivity;
 import com.cxz.androidcustomview.activity.bottomdialog.BottomDialogActivity;
+import com.cxz.androidcustomview.activity.pagetransformer.BliPageTransformerActivity;
 import com.cxz.androidcustomview.adapter.MainAdapter;
 import com.cxz.androidcustomview.base.BaseActivity;
 import com.cxz.androidcustomview.bean.MainBean;
@@ -109,6 +110,7 @@ public class MainActivity extends BaseActivity {
         lists.add(new MainBean(CustomType.TYPE_27, "下拉菜单"));
         lists.add(new MainBean(CustomType.TYPE_28, "水印相机"));
         lists.add(new MainBean(CustomType.TYPE_29, "自定义相机"));
+        lists.add(new MainBean(CustomType.TYPE_30, "自定义3D切换效果"));
         return lists;
     }
 
@@ -206,6 +208,9 @@ public class MainActivity extends BaseActivity {
             case CustomType.TYPE_29:
                 startActivity(title, CameraActivity.class);
                 break;
+            case CustomType.TYPE_30:
+                startActivity(title, BliPageTransformerActivity.class);
+                break;
         }
     }
 
@@ -243,9 +248,10 @@ public class MainActivity extends BaseActivity {
         static final int TYPE_24 = 24;
         static final int TYPE_25 = 25;
         static final int TYPE_26 = 26;
-        static final int TYPE_27 = 27;;
+        static final int TYPE_27 = 27;
         static final int TYPE_28 = 28;
         static final int TYPE_29 = 29;
+        static final int TYPE_30 = 30;
     }
 
 }
