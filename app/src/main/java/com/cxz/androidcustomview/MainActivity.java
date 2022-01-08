@@ -34,6 +34,7 @@ import com.cxz.androidcustomview.activity.TiltTextViewActivity;
 import com.cxz.androidcustomview.activity.WaveView2Activity;
 import com.cxz.androidcustomview.activity.WaveViewActivity;
 import com.cxz.androidcustomview.activity.bottomdialog.BottomDialogActivity;
+import com.cxz.androidcustomview.activity.cardgame.CardGameActivity;
 import com.cxz.androidcustomview.activity.pagetransformer.BliPageTransformerActivity;
 import com.cxz.androidcustomview.adapter.MainAdapter;
 import com.cxz.androidcustomview.base.BaseActivity;
@@ -111,6 +112,7 @@ public class MainActivity extends BaseActivity {
         lists.add(new MainBean(CustomType.TYPE_28, "水印相机"));
         lists.add(new MainBean(CustomType.TYPE_29, "自定义相机"));
         lists.add(new MainBean(CustomType.TYPE_30, "自定义3D切换效果"));
+        lists.add(new MainBean(CustomType.TYPE_31, "自定义3D翻牌效果"));
         return lists;
     }
 
@@ -211,6 +213,9 @@ public class MainActivity extends BaseActivity {
             case CustomType.TYPE_30:
                 startActivity(title, BliPageTransformerActivity.class);
                 break;
+            case CustomType.TYPE_31:
+                startActivity(title, CardGameActivity.class);
+                break;
         }
     }
 
@@ -252,6 +257,7 @@ public class MainActivity extends BaseActivity {
         static final int TYPE_28 = 28;
         static final int TYPE_29 = 29;
         static final int TYPE_30 = 30;
+        static final int TYPE_31 = 31;
     }
 
 }

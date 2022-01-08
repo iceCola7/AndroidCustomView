@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="66dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="15dp"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/cardItemRL"
+        android:layout_width="66dp"
+        android:layout_height="90dp">
+
+        <ImageView
+            android:id="@+id/cardItemIV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/icon_card_back_bg" />
+
+        <TextView
+            android:id="@+id/cardContentTV"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:maxLines="4"
+            android:textColor="#0A4D72"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="下家喝三杯"
+            tools:visibility="visible" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieAnimView"
+            android:layout_width="66dp"
+            android:layout_height="90dp"
+            android:visibility="gone"
+            app:lottie_autoPlay="false"
+            app:lottie_fileName="card_shine.json"
+            app:lottie_loop="false" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/userNameTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cardItemRL"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="#E8E8E8"
+        android:textSize="12sp"
+        tools:text="我是昵称" />
+
+</RelativeLayout>
